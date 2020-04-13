@@ -44,8 +44,16 @@ app.use((req, res, next) => {
     next();
 })
 
-
 // Home page
 app.get("/", (req, res) => {
     res.send("Automated Tsting With Tuyen<br>API for testing: /v1/xxx");
+})
+
+// Error handling middlware
+app.use((err, req, res, next) => {
+    console.error(err);
+    res.status(500).send({
+        success: false,
+        message: err.message
+    })
 })
