@@ -20,7 +20,7 @@ router.post("/email", (req, res, next) => {
        if (!user) {
            return res.status(404).json({
                success: false,
-               message: 'Người dùng không tồn tại'
+               message: 'User is not exist'
            });
        }
 
@@ -35,7 +35,7 @@ router.post("/email", (req, res, next) => {
            if (!isMatch) {
                return res.status(401).json({
                    success: false,
-                   message: 'Sai mật khẩu!'
+                   message: 'Wrong password!'
                });
            }
 
@@ -44,7 +44,7 @@ router.post("/email", (req, res, next) => {
            // return the information including token as JSON
            return res.status(200).json({
                success: true,
-               message: 'Đăng nhập thành công',
+               message: 'Login sucessfully',
                token: token,
                user: user
            });
@@ -58,7 +58,7 @@ router.post("/refresh_token", (req, res, next) => {
     if (accessToken === null) {
         return res.status(422).json({
             success: false,
-            message: 'Thiếu thông tin accessToken'
+            message: 'accessToken missing'
         })
     }
 
@@ -67,7 +67,7 @@ router.post("/refresh_token", (req, res, next) => {
             if (err.name === "TokenExpiredError") {
                 return res.status(401).json({
                     success: false,
-                    message: 'Phiên làm việc đã hết hạn'
+                    message: 'Access period expired'
                 });
             }
 
@@ -83,7 +83,7 @@ router.post("/refresh_token", (req, res, next) => {
             if (!user) {
                 return res.status(404).json({
                     success: false,
-                    message: "Người dùng không tồn tại"
+                    message: "User is not exist"
                 });
             }
 
@@ -92,7 +92,7 @@ router.post("/refresh_token", (req, res, next) => {
             // Return the information including token as JSON
             return res.status(200).json({
                 success: true,
-                message: 'Tạo mới access token thành công',
+                message: 'New access token refreshed',
                 token: newToken
             });
         });

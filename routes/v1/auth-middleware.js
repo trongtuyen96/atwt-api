@@ -9,7 +9,7 @@ module.exports = (req, res, next) => {
     if(!token){
         return res.status(401).send({
             success: false,
-            message: 'Chưa được xác thực'
+            message: 'No Authentication'
         });
     }
 
@@ -18,7 +18,7 @@ module.exports = (req, res, next) => {
         if(err){
             return res.json({
                 success: false,
-                message: 'Xác thực thất bại'
+                message: 'Authentication Failed'
             });
         } else {
             // If everything is good, save to request for use in other routes
