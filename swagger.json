@@ -14,7 +14,7 @@
             "email": "trongtuyen96@gmail.com"
         }
     },
-    "host": "https://atwt-api.herokuapp.com/",
+    "host": "https://atwt-api.herokuapp.com",
     "basePath": "/v1",
     "tags": [
         {
@@ -37,6 +37,7 @@
                 "tags": [
                     "Users"
                 ],
+                "summary": "Create a new user",
                 "description": "Create a new user",
                 "parameters": [
                     {
