@@ -3,7 +3,6 @@ const User = require('../../../models/user');
 const router = express.Router();
 const config = require('../../../config/user/config');
 const jwt = require('jsonwebtoken');
-const request = require('request');
 
 // Auth with google
 router.post("/google", (req, res) => {
