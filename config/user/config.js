@@ -4,8 +4,8 @@ module.exports = {
     'tokenExpiresIn': '7d',
 
     // Database connection 
-    'database': 'mongodb://localhost:27017/carmap',
-    'database_mlab': 'mongodb://admin:123456@ds211440.mlab.com:11440/carmap',
+    'database': '',
+    'database_mongo_cloud': 'mongodb+srv://admin:admin123456@atwt-api-database-ueu4l.gcp.mongodb.net/test?retryWrites=true&w=majority',
     
     // Setting port for server
     'port': process.env.PORT || 3000

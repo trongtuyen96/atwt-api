@@ -13,6 +13,14 @@ const app = express();
 // app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(bodyParser.json());
 
+// Connect to mongo db m-Lab
+mongoose.connect(config.database_mongo_cloud);
+mongoose.connection.once('open', () => {
+    console.log('Connect to database successfuly');
+}).on('error', () => {
+    console.log('Conmect to database failed')
+});
+
 // app.use(bodyParser({limit: '5mb'}))
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true, parameterLimit: 50000 }))
@@ -61,7 +69,10 @@ app.use((err, req, res, next) => {
     })
 })
 
-// // Listen request from client on port 
+// Remember to debug with local Heroku to narrow down the error
+// Command: node app-user.js
+// Open browser with localhost:3000
+// Listen request from client on port 
 app.listen(config.port, function () {
     console.log("Server user clients ready on port 3000");
 })
