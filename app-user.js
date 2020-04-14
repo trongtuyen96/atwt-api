@@ -46,8 +46,11 @@ app.use((req, res, next) => {
 
 // Home page
 app.get("/", (req, res) => {
-    res.send("Automated Tsting With Tuyen<br>API for testing: /v1/xxx");
+    res.send("Automated Testing With Tuyen<br>API for testing: /v1/xxx");
 })
+
+// RESTful API handler
+app.use('/api-user', require('./routes/api'));
 
 // Error handling middlware
 app.use((err, req, res, next) => {

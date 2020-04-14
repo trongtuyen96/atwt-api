@@ -11,10 +11,12 @@ app.use('/auth', require('./auth'));
 
 // Below APIs need an authentication
 app.use('/user', require('./user'));
-
 app.use('/car', require('./car'));
-app.use('/fruit', require('./fruit'));
+
+app.use('/factory', require('./factory'));
 app.use('/food', require('./food'));
+
+app.use('/zoo', require('./zoo'));
 app.use('/animal', require('./animal'));
 
 module.exports = app;
