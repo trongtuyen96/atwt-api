@@ -4,10 +4,7 @@ const mongoose = require('mongoose');
 const logger = require('morgan');
 const config = require('./config/user/config');
 const expressValidator = require('express-validator');
-const MongoClient = require('mongodb').MongoClient;
 
-const client = new MongoClient(config.database_mongo_cloud,{useNewUrlParser: true});
-client.connect;
 
 // Set up express app
 const app = express();
@@ -17,12 +14,12 @@ const app = express();
 // app.use(bodyParser.json());
 
 // Connect to mongo db
-// mongoose.connect(config.database_mlab);
-// mongoose.connection.once('open', () => {
-//     console.log('Connect to database successfuly');
-// }).on('error', () => {
-//     console.log('Conmect to database failed')
-// });
+mongoose.connect(config.database_mongo_cloud, { useNewUrlParser: true });
+mongoose.connection.once('open', () => {
+    console.log('Connect to database successfuly');
+}).on('error', () => {
+    console.log('Conmect to database failed')
+});
 
 // app.use(bodyParser({limit: '5mb'}))
 app.use(bodyParser.json({ limit: "50mb" }));
