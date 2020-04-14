@@ -1,7 +1,7 @@
 const express = require('express');
-const User = require('../../../models/user');
+const User = require('../../models/user');
 const router = express.Router();
-const config = require('../../../config/user/config');
+const config = require('../../config/user/config');
 const jwt = require('jsonwebtoken');
 
 // Auth with google

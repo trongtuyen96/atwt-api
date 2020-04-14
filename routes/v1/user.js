@@ -1,6 +1,6 @@
 const express = require('express');
-const User = require('../../../models/user');
-const Car = require('../../../models/car');
+const User = require('../../models/user');
+const Car = require('../../models/car');
 const router = express.Router();
 
 // Require authenticate

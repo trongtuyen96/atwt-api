@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-const Factory = require('../../../models/factory')
-const Food = require('../../../models/food')
+const Factory = require('../../models/factory')
+const Food = require('../../models/food')
 
 // Get factory by ID
 router.get("/:id", (req, res, next) => {

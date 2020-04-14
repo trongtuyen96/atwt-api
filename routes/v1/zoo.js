@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-const Zoo = require('../../../models/zoo')
-const Animal = require('../../../models/animal')
+const Zoo = require('../../models/zoo')
+const Animal = require('../../models/animal')
 
 // Get zoo by ID
 router.get("/:id", (req, res, next) => {

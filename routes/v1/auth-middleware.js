@@ -1,4 +1,4 @@
-const config = require('../../../config/user/config');
+const config = require('../../config/user/config');
 const jwt = require('jsonwebtoken');
 
 // Auth middleware

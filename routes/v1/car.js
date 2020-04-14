@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-const Car = require('../../../models/car')
+const Car = require('../../models/car')
 
 // Get car by ID
 router.get("/:id", (req, res, next) => {
