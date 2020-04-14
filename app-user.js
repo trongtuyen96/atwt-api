@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const logger = require('morgan');
 const config = require('./config/user/config');
 const expressValidator = require('express-validator');
+const swaggerUI = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 
 
 // Set up express app
@@ -66,6 +68,9 @@ app.use((err, req, res, next) => {
         message: err.message
     })
 })
+
+// Set up for SwaggerUI
+app.use('api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 // Remember to debug with local Heroku to narrow down the error
 // Command: node app-user.js
