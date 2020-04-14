@@ -8,7 +8,7 @@ const FoodSchema = new Schema({
     origin: String,
     factoryID: {
         type: Schema.Types.ObjectId,
-        required: true
+        required: true,
     }
 })
 

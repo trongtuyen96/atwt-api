@@ -40,6 +40,7 @@ router.get("/:id/foods", (req, res, next) => {
         }).catch(next);
 });
 
+// Create a factory
 router.post("/", (req, res, next) => {
     let factory = new Factory({
         name: req.body.name,
@@ -52,5 +53,18 @@ router.post("/", (req, res, next) => {
         res.send(factory)
     }).catch(next);
 });
+
+// Delete a factory
+/* router.delete("/:id", (req, res, next) => {
+    let factoryID = req.params.id;
+    Factory
+        .findByIdAndRemove(factoryID)
+        .then(() => {
+            return res.status(200).send({
+                success: true
+            });
+        }).catch(next);
+});
+*/
 
 module.exports = router;

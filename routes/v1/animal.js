@@ -28,6 +28,7 @@ router.get("/", (req, res, next) => {
     }).catch(next);
 });
 
+// Create an animal
 router.post("/", (req, res, next) => {
     let animal = new Animal({
         species: req.body.species,
@@ -40,6 +41,18 @@ router.post("/", (req, res, next) => {
     animal.save().then((animal) => {
         res.send(animal)
     }).catch(next);
+});
+
+// Delete an animal
+router.delete("/:id", (req, res, next) => {
+    let animalId = req.params.id;
+    Animal
+        .findByIdAndRemove(animalId)
+        .then(() => {
+            return res.status(200).send({
+                success: true
+            });
+        }).catch(next);
 });
 
 module.exports = router;

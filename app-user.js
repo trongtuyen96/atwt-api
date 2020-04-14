@@ -13,7 +13,8 @@ const app = express();
 // app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(bodyParser.json());
 
-// Connect to mongo db
+// Connect to mongo db cloud
+// If you met a problem that you can connect but cannot write, it may from the whitelist IP, update it to 0.0.0.0/0 in Network Access -> IP Adress, which allows all access
 mongoose.connect(config.database_mongo_cloud, { useNewUrlParser: true });
 mongoose.connection.once('open', () => {
     console.log('Connect to database successfuly');
@@ -27,9 +28,6 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: true, parameterLimit: 5
 
 // This line must be right after any of the bodyParser middleware
 app.use(expressValidator());
-
-// express serve static files
-// app.use('/public/', express.static('./public'));
 
 // Morgan to log any request to console
 app.use(logger('dev'));

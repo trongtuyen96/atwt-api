@@ -28,4 +28,30 @@ router.get("/", (req, res, next) => {
     }).catch(next);
 });
 
+// Create food
+router.post("/", (req, res, next) => {
+    let food = new Food({
+        name: req.body.name,
+        weight: req.body.weight,
+        color: req.body.color,
+        origin: req.body.origin,
+        factoryID: req.body.factoryID
+    });
+    food.save().then((food) => {
+        res.send(food)
+    }).catch(next);
+});
+
+// Delete food
+router.delete("/:id", (req, res, next) => {
+    let foodID = req.params.id;
+    Food
+        .findByIdAndRemove(foodID)
+        .then(() => {
+            return res.status(200).send({
+                success: true
+            });
+        }).catch(next);
+});
+
 module.exports = router;

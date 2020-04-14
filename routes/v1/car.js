@@ -28,4 +28,30 @@ router.get("/", (req, res, next) => {
     }).catch(next);
 });
 
+// Create a car
+router.post("/", (req, res, next) => {
+    let car = new Car({
+        type: req.body.type,
+        speed: req.body.speed,
+        model: req.body.model,
+        color: req.body.color,
+        userID: req.body.userID
+    });
+    car.save().then((car) => {
+        res.send(car)
+    }).catch(next);
+});
+
+// Delete a car
+router.delete("/:id", (req, res, next) => {
+    let carId = req.params.id;
+    Car
+        .findByIdAndRemove(carId)
+        .then(() => {
+            return res.status(200).send({
+                success: true
+            });
+        }).catch(next);
+});
+
 module.exports = router;

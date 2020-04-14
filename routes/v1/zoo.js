@@ -40,4 +40,30 @@ router.get("/:id/animals", (req, res, next) => {
         }).catch(next);
 });
 
+// Create a zoo
+router.post("/", (req, res, next) => {
+    let zoo = new Zoo({
+        name: req.body.name,
+        location: req.body.location,
+        country: req.body.country,
+        license: req.body.license,
+        year: req.body.year
+    });
+    zoo.save().then((zoo) => {
+        res.send(zoo)
+    }).catch(next);
+});
+
+// Delete a zoo
+/* router.delete("/:id", (req, res, next) => {
+    let zooID = req.params.id;
+    Zoo
+        .findByIdAndRemove(zooID)
+        .then(() => {
+            return res.status(200).send({
+                success: true
+            });
+        }).catch(next);
+});
+*/
 module.exports = router;
