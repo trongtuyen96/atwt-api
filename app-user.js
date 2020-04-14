@@ -14,7 +14,7 @@ const app = express();
 // app.use(bodyParser.json());
 
 // Connect to mongo db m-Lab
-mongoose.connect(config.database_mlab);
+mongoose.connect(config.database_mongo_cloud);
 mongoose.connection.once('open', () => {
     console.log('Connect to database successfuly');
 }).on('error', () => {
