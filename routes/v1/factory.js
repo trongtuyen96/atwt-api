@@ -40,4 +40,17 @@ router.get("/:id/foods", (req, res, next) => {
         }).catch(next);
 });
 
+router.post("/", (req, res, next) => {
+    let factory = new Factory({
+        name: req.body.name,
+        location: req.body.location,
+        country: req.body.country,
+        license: req.body.license,
+        year: req.body.year
+    });
+    factory.save().then((factory) => {
+        res.send(factory)
+    }).catch(next);
+});
+
 module.exports = router;
