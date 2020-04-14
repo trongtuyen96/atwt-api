@@ -1,0 +1,260 @@
+swagger: "2.0"
+info:
+    "version": "1.0.0"
+    "title": "ATWT API for Testing"
+    "description": "This is an example api for testing purpose. AutomatedTestingWithTuyen.com"
+    "license":
+        "name": "Apache 2.0"
+        "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    "contact":
+        "name": "Tuyen Nguyen"
+        "url": "http://automatedtestingwithtuyen.com"
+        "email": "trongtuyen96@gmail.com"
+
+host: "atwt-api.herokuapp.com"
+basePath: "/v1"
+tags:
+    - name: "user"
+      description: "User own a car/cars"
+    - name: "car"
+      description: "Car belongs to user"
+    - name: "factory"
+      description: "Factory products foods"
+    - name: "food"
+      description: "Food made in factory"
+    - name: "zoo"
+      description: "Zoo holds animals"
+    - name: "animal"
+      description: "Animal lives in zoo"
+
+schemes:
+    - "https"
+paths:
+    /user:
+        get:
+            tags:
+                - "user"
+            summary: "Get all users"
+            description: ""
+            operationId: "getAllUser"
+            produces:
+                - "application/xml"
+                - "application/json"
+            responses:
+                200:
+                    description: "Successfull operation"
+                    schema:
+                        type: array
+                        $ref: "#/definitions/User"
+        post:
+            tags:
+                - "user"
+            summary: "Add a new user"
+            description: ""
+            operationId: "postUser"
+            consumes:
+                - "application/json"
+                - "application/xml"
+            produces:
+                - "application/xml"
+                - "application/json"
+            parameters:
+                - in: "body"
+                  name: "body"
+                  description: "User object that need to add"
+                  required: true
+                  schema:
+                      $ref: "#/definitions/User"
+            responses:
+                200:
+                    description: "Successfull operation"
+                405:
+                    description: "Invalid input"
+        put:
+            tags:
+                - "pet"
+            summary: "Update an existing user"
+            description: "Curent "
+            operationId: "putUser"
+            consumes:
+                - "application/json"
+                - "application/xml"
+            produces:
+                - "application/xml"
+                - "application/json"
+            parameters:
+                - in: "body"
+                  name: "body"
+                  description: "User object that needs to be updated"
+                  required: true
+                  schema:
+                      $ref: "#/definitions/User"
+            responses:
+                400:
+                    description: "Invalid Id supplied"
+                404:
+                    description: "User not found"
+                405:
+                    description: "Validation exception"
+            deprecated: true
+    /user/{userId}:
+        get:
+            tags:
+                - "user"
+            summary: "Find user by Id"
+            description: "Returns a single user"
+            operationId: "getUserById"
+            produces:
+                - "application/xml"
+                - "application/json"
+            parameters:
+                - name: "userId"
+                  in: "path"
+                  description: "Id of user to return"
+                  required: true
+                  type: "string"
+            responses:
+                200:
+                    description: "Successful operation"
+                    schema:
+                        $ref: "#/definitions/User"
+                400:
+                    description: "Invalid Id supplied"
+                404:
+                    description: "User not found"
+        delete:
+            tags:
+                - "user"
+            summary: "Deletes a user"
+            description: ""
+            operationId: "deleteUser"
+            produces:
+                - "application/xml"
+                - "application/json"
+            parameters:
+                - name: "userId"
+                  in: "path"
+                  description: "User Id to delete"
+                  required: true
+                  type: "string"
+            responses:
+                400:
+                    description: "Invalid Id supplied"
+                404:
+                    description: "User not found"
+definitions:
+    Order:
+        type: "object"
+        properties:
+            id:
+                type: "integer"
+                format: "int64"
+            petId:
+                type: "integer"
+                format: "int64"
+            quantity:
+                type: "integer"
+                format: "int32"
+            shipDate:
+                type: "string"
+                format: "date-time"
+            status:
+                type: "string"
+                description: "Order Status"
+                enum:
+                    - "placed"
+                    - "approved"
+                    - "delivered"
+            complete:
+                type: "boolean"
+                default: false
+        xml:
+            name: "Order"
+    Category:
+        type: "object"
+        properties:
+            id:
+                type: "integer"
+                format: "int64"
+            name:
+                type: "string"
+        xml:
+            name: "Category"
+    User:
+        type: "object"
+        properties:
+            id:
+                type: "integer"
+                format: "int64"
+            name:
+                type: "string"
+            email:
+                type: "string"
+            password:
+                type: "string"
+            bỉthDate:
+                type: "date"
+            phoneNumber:
+                type: "string"
+        xml:
+            name: "User"
+    Tag:
+        type: "object"
+        properties:
+            id:
+                type: "integer"
+                format: "int64"
+            name:
+                type: "string"
+        xml:
+            name: "Tag"
+    Pet:
+        type: "object"
+        required:
+            - "name"
+            - "photoUrls"
+        properties:
+            id:
+                type: "integer"
+                format: "int64"
+            category:
+                $ref: "#/definitions/Category"
+            name:
+                type: "string"
+                example: "doggie"
+            photoUrls:
+                type: "array"
+                xml:
+                    name: "photoUrl"
+                    wrapped: true
+                items:
+                    type: "string"
+            tags:
+                type: "array"
+                xml:
+                    name: "tag"
+                    wrapped: true
+                items:
+                    $ref: "#/definitions/Tag"
+            status:
+                type: "string"
+                description: "pet status in the store"
+                enum:
+                    - "available"
+                    - "pending"
+                    - "sold"
+        xml:
+            name: "Pet"
+    ApiResponse:
+        type: "object"
+        properties:
+            code:
+                type: "integer"
+                format: "int32"
+            type:
+                type: "string"
+            message:
+                type: "string"
+externalDocs:
+    description: "Find out more about Swagger"
+    url: "http://swagger.io"

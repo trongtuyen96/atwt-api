@@ -5,7 +5,7 @@ const logger = require('morgan');
 const config = require('./config/user/config');
 const expressValidator = require('express-validator');
 const swaggerUI = require('swagger-ui-express');
-const swaggerDocument = require('./swagger.json');
+const swaggerDocument = require('./swagger.yaml');
 
 
 // Set up express app
