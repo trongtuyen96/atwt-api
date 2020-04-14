@@ -14,7 +14,7 @@
             "email": "trongtuyen96@gmail.com"
         }
     },
-    "host": "https://atwt-api.herokuapp.com",
+    "host": "atwt-api.herokuapp.com",
     "basePath": "/v1",
     "tags": [
         {
@@ -23,7 +23,7 @@
         }
     ],
     "schemes": [
-        "http"
+        "https"
     ],
     "consumes": [
         "application/json"
