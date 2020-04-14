@@ -19,7 +19,7 @@
     "tags": [
         {
             "name": "user",
-            "description": "User own a car/cars"
+            "description": "User own cars"
         },
         {
             "name": "car",
@@ -55,7 +55,6 @@
                 "description": "",
                 "operationId": "getAllUser",
                 "produces": [
-                    "application/xml",
                     "application/json"
                 ],
                 "responses": {
@@ -76,11 +75,9 @@
                 "description": "",
                 "operationId": "postUser",
                 "consumes": [
-                    "application/json",
-                    "application/xml"
+                    "application/json"
                 ],
                 "produces": [
-                    "application/xml",
                     "application/json"
                 ],
                 "parameters": [
@@ -108,14 +105,12 @@
                     "user"
                 ],
                 "summary": "Update an existing user",
-                "description": "Curent ",
+                "description": "Blocked",
                 "operationId": "putUser",
                 "consumes": [
-                    "application/json",
-                    "application/xml"
+                    "application/json"
                 ],
                 "produces": [
-                    "application/xml",
                     "application/json"
                 ],
                 "parameters": [
@@ -152,7 +147,6 @@
                 "description": "Returns a single user",
                 "operationId": "getUserById",
                 "produces": [
-                    "application/xml",
                     "application/json"
                 ],
                 "parameters": [
@@ -187,7 +181,6 @@
                 "description": "",
                 "operationId": "deleteUser",
                 "produces": [
-                    "application/xml",
                     "application/json"
                 ],
                 "parameters": [
@@ -206,80 +199,922 @@
                     "404": {
                         "description": "User not found"
                     }
+                },
+                "deprecated": true
+            }
+        },
+        "/user/{userId}/cars": {
+            "get": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Find all cars of user by Id",
+                "description": "Returns cars belongs to user",
+                "operationId": "getAllCarsOfUserById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "Id of user to return",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "type": "array",
+                            "$ref": "#/definitions/Car"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Id supplied"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        },
+        "/car": {
+            "get": {
+                "tags": [
+                    "car"
+                ],
+                "summary": "Get all cars",
+                "description": "",
+                "operationId": "getAllCar",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfull operation",
+                        "schema": {
+                            "type": "array",
+                            "$ref": "#/definitions/Car"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "car"
+                ],
+                "summary": "Add a new car",
+                "description": "",
+                "operationId": "postCar",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Car object that need to add",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Car"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfull operation"
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "car"
+                ],
+                "summary": "Update an existing car",
+                "description": "Blocked",
+                "operationId": "putCar",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Car object that needs to be updated",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Car"
+                        }
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid Id supplied"
+                    },
+                    "404": {
+                        "description": "Car not found"
+                    },
+                    "405": {
+                        "description": "Validation exception"
+                    }
+                },
+                "deprecated": true
+            }
+        },
+        "/car/{carId}": {
+            "get": {
+                "tags": [
+                    "car"
+                ],
+                "summary": "Find car by Id",
+                "description": "Returns a single car",
+                "operationId": "getCarById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "carId",
+                        "in": "path",
+                        "description": "Id of car to return",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Car"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Id supplied"
+                    },
+                    "404": {
+                        "description": "Car not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "car"
+                ],
+                "summary": "Deletes a car",
+                "description": "",
+                "operationId": "deleteCar",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "carId",
+                        "in": "path",
+                        "description": "Car Id to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid Id supplied"
+                    },
+                    "404": {
+                        "description": "Car not found"
+                    }
+                }
+            }
+        },
+        "/factory": {
+            "get": {
+                "tags": [
+                    "factory"
+                ],
+                "summary": "Get all factories",
+                "description": "",
+                "operationId": "getAllFactory",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfull operation",
+                        "schema": {
+                            "type": "array",
+                            "$ref": "#/definitions/Factory"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "factory"
+                ],
+                "summary": "Add a new factory",
+                "description": "",
+                "operationId": "postFactory",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Factory object that need to add",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Factory"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfull operation"
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "factory"
+                ],
+                "summary": "Update an existing factory",
+                "description": "Blocked",
+                "operationId": "putFactory",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Factory object that needs to be updated",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Factory"
+                        }
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid Id supplied"
+                    },
+                    "404": {
+                        "description": "Factory not found"
+                    },
+                    "405": {
+                        "description": "Validation exception"
+                    }
+                },
+                "deprecated": true
+            }
+        },
+        "/factory/{factoryId}": {
+            "get": {
+                "tags": [
+                    "factory"
+                ],
+                "summary": "Find factory by Id",
+                "description": "Returns a single factory",
+                "operationId": "getFactoryById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "factoryId",
+                        "in": "path",
+                        "description": "Id of factory to return",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Factory"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Id supplied"
+                    },
+                    "404": {
+                        "description": "Factory not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "factory"
+                ],
+                "summary": "Deletes a factory",
+                "description": "",
+                "operationId": "deleteFactory",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "factoryId",
+                        "in": "path",
+                        "description": "Factory Id to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid Id supplied"
+                    },
+                    "404": {
+                        "description": "Factory not found"
+                    }
+                },
+                "deprecated": true
+            }
+        },
+        "/factory/{factoryId}/foods": {
+            "get": {
+                "tags": [
+                    "factory"
+                ],
+                "summary": "Find all foods produced by factory by Id",
+                "description": "Returns foods produced by factory",
+                "operationId": "getAllFoodsOfFactoryById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "factoryId",
+                        "in": "path",
+                        "description": "Id of factory to return",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "type": "array",
+                            "$ref": "#/definitions/Food"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Id supplied"
+                    },
+                    "404": {
+                        "description": "Factory not found"
+                    }
+                }
+            }
+        },
+        "/food": {
+            "get": {
+                "tags": [
+                    "food"
+                ],
+                "summary": "Get all foods",
+                "description": "",
+                "operationId": "getAllFood",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfull operation",
+                        "schema": {
+                            "type": "array",
+                            "$ref": "#/definitions/Food"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "food"
+                ],
+                "summary": "Add a new food",
+                "description": "",
+                "operationId": "postFood",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Food object that need to add",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Food"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfull operation"
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "food"
+                ],
+                "summary": "Update an existing food",
+                "description": "Blocked",
+                "operationId": "putFood",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Food object that needs to be updated",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Food"
+                        }
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid Id supplied"
+                    },
+                    "404": {
+                        "description": "Food not found"
+                    },
+                    "405": {
+                        "description": "Validation exception"
+                    }
+                },
+                "deprecated": true
+            }
+        },
+        "/food/{foodId}": {
+            "get": {
+                "tags": [
+                    "food"
+                ],
+                "summary": "Find food by Id",
+                "description": "Returns a single food",
+                "operationId": "getFoodById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "foodId",
+                        "in": "path",
+                        "description": "Id of food to return",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Food"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Id supplied"
+                    },
+                    "404": {
+                        "description": "Food not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "food"
+                ],
+                "summary": "Deletes a food",
+                "description": "",
+                "operationId": "deleteFood",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "foodId",
+                        "in": "path",
+                        "description": "Food Id to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid Id supplied"
+                    },
+                    "404": {
+                        "description": "Food not found"
+                    }
+                }
+            }
+        },
+        "/zoo": {
+            "get": {
+                "tags": [
+                    "zoo"
+                ],
+                "summary": "Get all zoo",
+                "description": "",
+                "operationId": "getAllZoo",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfull operation",
+                        "schema": {
+                            "type": "array",
+                            "$ref": "#/definitions/Zoo"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "zoo"
+                ],
+                "summary": "Add a new zoo",
+                "description": "",
+                "operationId": "postZoo",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Zoo object that need to add",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Zoo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfull operation"
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "zoo"
+                ],
+                "summary": "Update an existing zoo",
+                "description": "Blocked",
+                "operationId": "putZoo",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Zoo object that needs to be updated",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Zoo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid Id supplied"
+                    },
+                    "404": {
+                        "description": "Zoo not found"
+                    },
+                    "405": {
+                        "description": "Validation exception"
+                    }
+                },
+                "deprecated": true
+            }
+        },
+        "/zoo/{zooId}": {
+            "get": {
+                "tags": [
+                    "zoo"
+                ],
+                "summary": "Find zoo by Id",
+                "description": "Returns a single zoo",
+                "operationId": "getZooById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "zooId",
+                        "in": "path",
+                        "description": "Id of zoo to return",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Zoo"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Id supplied"
+                    },
+                    "404": {
+                        "description": "Zoo not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "zoo"
+                ],
+                "summary": "Deletes a zoo",
+                "description": "",
+                "operationId": "deleteZoo",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "zooId",
+                        "in": "path",
+                        "description": "Zoo Id to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid Id supplied"
+                    },
+                    "404": {
+                        "description": "Zoo not found"
+                    }
+                },
+                "deprecated": true
+            }
+        },
+        "/zoo/{zooId}/animals": {
+            "get": {
+                "tags": [
+                    "zoo"
+                ],
+                "summary": "Find all animals in the zoo by Id",
+                "description": "Returns animals in the zoo",
+                "operationId": "getAllAnimalsOfZooById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "zooId",
+                        "in": "path",
+                        "description": "Id of zoo to return",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "type": "array",
+                            "$ref": "#/definitions/Animal"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Id supplied"
+                    },
+                    "404": {
+                        "description": "Zoo not found"
+                    }
+                }
+            }
+        },
+        "/animal": {
+            "get": {
+                "tags": [
+                    "animal"
+                ],
+                "summary": "Get all animals",
+                "description": "",
+                "operationId": "getAllAnimal",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfull operation",
+                        "schema": {
+                            "type": "array",
+                            "$ref": "#/definitions/Animal"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "animal"
+                ],
+                "summary": "Add a new animal",
+                "description": "",
+                "operationId": "postAnimal",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Animal object that need to add",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Animal"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfull operation"
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "animal"
+                ],
+                "summary": "Update an existing animal",
+                "description": "Blocked",
+                "operationId": "putAnimal",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Animal object that needs to be updated",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Animal"
+                        }
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid Id supplied"
+                    },
+                    "404": {
+                        "description": "Animal not found"
+                    },
+                    "405": {
+                        "description": "Validation exception"
+                    }
+                },
+                "deprecated": true
+            }
+        },
+        "/animal/{animalId}": {
+            "get": {
+                "tags": [
+                    "animal"
+                ],
+                "summary": "Find animal by Id",
+                "description": "Returns a single animal",
+                "operationId": "getAnimalById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "animalId",
+                        "in": "path",
+                        "description": "Id of animal to return",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Animal"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Id supplied"
+                    },
+                    "404": {
+                        "description": "Animal not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "animal"
+                ],
+                "summary": "Deletes a animal",
+                "description": "",
+                "operationId": "deleteAnimal",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "animalId",
+                        "in": "path",
+                        "description": "Animal Id to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid Id supplied"
+                    },
+                    "404": {
+                        "description": "Animal not found"
+                    }
                 }
             }
         }
     },
     "definitions": {
-        "Order": {
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "integer",
-                    "format": "int64"
-                },
-                "petId": {
-                    "type": "integer",
-                    "format": "int64"
-                },
-                "quantity": {
-                    "type": "integer",
-                    "format": "int32"
-                },
-                "shipDate": {
-                    "type": "string",
-                    "format": "date-time"
-                },
-                "status": {
-                    "type": "string",
-                    "description": "Order Status",
-                    "enum": [
-                        "placed",
-                        "approved",
-                        "delivered"
-                    ]
-                },
-                "complete": {
-                    "type": "boolean",
-                    "default": false
-                }
-            },
-            "xml": {
-                "name": "Order"
-            }
-        },
-        "Category": {
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "integer",
-                    "format": "int64"
-                },
-                "name": {
-                    "type": "string"
-                }
-            },
-            "xml": {
-                "name": "Category"
-            }
-        },
         "User": {
             "type": "object",
+            "required": [
+                "name",
+                "phoneNumber"
+            ],
             "properties": {
-                "id": {
-                    "type": "integer",
-                    "format": "int64"
-                },
-                "name": {
-                    "type": "string"
-                },
                 "email": {
                     "type": "string"
                 },
                 "password": {
                     "type": "string"
                 },
-                "bỉthDate": {
+                "name": {
+                    "type": "string"
+                },
+                "birthDate": {
                     "type": "string",
                     "format": "date-time"
                 },
@@ -291,86 +1126,131 @@
                 "name": "User"
             }
         },
-        "Tag": {
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "integer",
-                    "format": "int64"
-                },
-                "name": {
-                    "type": "string"
-                }
-            },
-            "xml": {
-                "name": "Tag"
-            }
-        },
-        "Pet": {
+        "Car": {
             "type": "object",
             "required": [
-                "name",
-                "photoUrls"
+                "userID"
             ],
             "properties": {
-                "id": {
-                    "type": "integer",
-                    "format": "int64"
-                },
-                "category": {
-                    "$ref": "#/definitions/Category"
-                },
-                "name": {
-                    "type": "string",
-                    "example": "doggie"
-                },
-                "photoUrls": {
-                    "type": "array",
-                    "xml": {
-                        "name": "photoUrl",
-                        "wrapped": true
-                    },
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "tags": {
-                    "type": "array",
-                    "xml": {
-                        "name": "tag",
-                        "wrapped": true
-                    },
-                    "items": {
-                        "$ref": "#/definitions/Tag"
-                    }
-                },
-                "status": {
-                    "type": "string",
-                    "description": "pet status in the store",
-                    "enum": [
-                        "available",
-                        "pending",
-                        "sold"
-                    ]
-                }
-            },
-            "xml": {
-                "name": "Pet"
-            }
-        },
-        "ApiResponse": {
-            "type": "object",
-            "properties": {
-                "code": {
-                    "type": "integer",
-                    "format": "int32"
-                },
                 "type": {
                     "type": "string"
                 },
-                "message": {
+                "speed": {
+                    "type": "integer"
+                },
+                "model": {
+                    "type": "string"
+                },
+                "color": {
+                    "type": "string"
+                },
+                "userID": {
                     "type": "string"
                 }
+            },
+            "xml": {
+                "name": "Car"
+            }
+        },
+        "Factory": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "license": {
+                    "type": "string"
+                },
+                "year": {
+                    "type": "integer"
+                }
+            },
+            "xml": {
+                "name": "Factory"
+            }
+        },
+        "Food": {
+            "type": "object",
+            "required": [
+                "factoryID"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "weight": {
+                    "type": "integer"
+                },
+                "color": {
+                    "type": "string"
+                },
+                "origin": {
+                    "type": "string"
+                },
+                "factoryID": {
+                    "type": "string"
+                }
+            },
+            "xml": {
+                "name": "Food"
+            }
+        },
+        "Zoo": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "license": {
+                    "type": "string"
+                },
+                "year": {
+                    "type": "integer"
+                }
+            },
+            "xml": {
+                "name": "Zoo"
+            }
+        },
+        "Animal": {
+            "type": "object",
+            "required": [
+                "zooID"
+            ],
+            "properties": {
+                "species": {
+                    "type": "string"
+                },
+                "lifespan": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "color": {
+                    "type": "string"
+                },
+                "weight": {
+                    "type": "integer"
+                },
+                "zooID": {
+                    "type": "string"
+                }
+            },
+            "xml": {
+                "name": "Animal"
             }
         }
     }
