@@ -177,7 +177,7 @@
                 "tags": [
                     "user"
                 ],
-                "summary": "Deletes a user",
+                "summary": "Delete a user",
                 "description": "",
                 "operationId": "deleteUser",
                 "produces": [
@@ -371,7 +371,7 @@
                 "tags": [
                     "car"
                 ],
-                "summary": "Deletes a car",
+                "summary": "Delete a car",
                 "description": "",
                 "operationId": "deleteCar",
                 "produces": [
@@ -527,7 +527,7 @@
                 "tags": [
                     "factory"
                 ],
-                "summary": "Deletes a factory",
+                "summary": "Delete a factory",
                 "description": "",
                 "operationId": "deleteFactory",
                 "produces": [
@@ -721,7 +721,7 @@
                 "tags": [
                     "food"
                 ],
-                "summary": "Deletes a food",
+                "summary": "Delete a food",
                 "description": "",
                 "operationId": "deleteFood",
                 "produces": [
@@ -877,7 +877,7 @@
                 "tags": [
                     "zoo"
                 ],
-                "summary": "Deletes a zoo",
+                "summary": "Delete a zoo",
                 "description": "",
                 "operationId": "deleteZoo",
                 "produces": [
@@ -1071,7 +1071,7 @@
                 "tags": [
                     "animal"
                 ],
-                "summary": "Deletes a animal",
+                "summary": "Delete a animal",
                 "description": "",
                 "operationId": "deleteAnimal",
                 "produces": [
