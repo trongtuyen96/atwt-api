@@ -70,7 +70,7 @@ app.use((err, req, res, next) => {
 })
 
 // Set up for SwaggerUI
-app.use('api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 // Remember to debug with local Heroku to narrow down the error
 // Command: node app-user.js
