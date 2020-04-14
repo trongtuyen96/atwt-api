@@ -14,7 +14,7 @@ const app = express();
 // app.use(bodyParser.json());
 
 // Connect to mongo db
-mongoose.connect(config.database_mlab, { useNewUrlParser: true });
+mongoose.connect(config.database_mongo_cloud, { useNewUrlParser: true });
 mongoose.connection.once('open', () => {
     console.log('Connect to database successfuly');
 }).on('error', () => {
