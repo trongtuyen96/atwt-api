@@ -3,7 +3,7 @@
     "info": {
         "version": "1.0.0",
         "title": "ATWT API for Testing",
-        "description": "This is an example api for testing purpose. AutomatedTestingWithTuyen.com",
+        "description": "This is an example api for testing purpose. automatedtestingwithtuyen.com",
         "license": {
             "name": "Apache 2.0",
             "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
@@ -105,7 +105,7 @@
             },
             "put": {
                 "tags": [
-                    "pet"
+                    "user"
                 ],
                 "summary": "Update an existing user",
                 "description": "Curent ",
@@ -280,7 +280,8 @@
                     "type": "string"
                 },
                 "bỉthDate": {
-                    "type": "date"
+                    "type": "string",
+                    "format": "date-time"
                 },
                 "phoneNumber": {
                     "type": "string"
@@ -372,9 +373,5 @@
                 }
             }
         }
-    },
-    "externalDocs": {
-        "description": "Find out more about Swagger",
-        "url": "http://swagger.io"
     }
 }
