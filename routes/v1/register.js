@@ -2,11 +2,6 @@ const express = require('express');
 const User = require('../../models/user');
 const router = express.Router();
 
-// register with google
-router.post("/google", (req, res, next) => {
-    res.send('register with google');
-});
-
 // register with email
 router.post("/email", (req, res, next) => {
     req.checkBody({

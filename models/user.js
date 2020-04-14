@@ -18,7 +18,6 @@ const UserSchema = new Schema({
         required: true
     },
     birthDate: Date,
-    googleUserID: String,
     phoneNumber: {
         type: String,
         required: true

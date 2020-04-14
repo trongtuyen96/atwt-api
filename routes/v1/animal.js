@@ -28,4 +28,18 @@ router.get("/", (req, res, next) => {
     }).catch(next);
 });
 
+router.post("/", (req, res, next) => {
+    let animal = new Animal({
+        species: req.body.species,
+        lifespan: req.body.lifespan,
+        name: req.body.name,
+        color: req.body.color,
+        weight: req.body.weight,
+        zooID: req.body.zooID
+    });
+    animal.save().then((animal) => {
+        res.send(animal)
+    }).catch(next);
+});
+
 module.exports = router;

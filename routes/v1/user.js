@@ -70,4 +70,18 @@ router.get("/car", authenticate, (req, res, next) => {
         }).catch(next);
 });
 
+router.post("/", (req, res, next) => {
+    let user = new User({
+        email: req.body.email,
+        password: req.body.password,
+        name: req.body.name,
+        birthDate: req.body.birthDate,
+        phoneNumber: req.body.phoneNumber
+    });
+    user.save().then((user) => {
+        res.send(user)
+    }).catch(next);
+});
+
+
 module.exports = router;
