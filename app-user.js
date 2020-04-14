@@ -50,7 +50,7 @@ app.get("/", (req, res) => {
 })
 
 // RESTful API handler
-app.use('/api-user', require('./routes/api'));
+app.use('/', require('./routes/api'));
 
 // Error handling middlware
 app.use((err, req, res, next) => {
@@ -59,4 +59,9 @@ app.use((err, req, res, next) => {
         success: false,
         message: err.message
     })
+})
+
+// // Listen request from client on port 
+app.listen(config.port, function () {
+    console.log("Server user clients ready on port 3000");
 })
