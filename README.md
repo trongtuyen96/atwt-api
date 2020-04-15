@@ -7,7 +7,8 @@
   <br>
 </h1>
 
-<h3 align="center" style="bold">An REST API for testing purpose using <a href="https://nodejs.org/en/">Nodejs</a>, <a href="https://expressjs.com/">Expressjs</a> and hosted on <a href="https://dashboard.heroku.com/">Heroku</a> with <a href="https://www.mongodb.com/cloud/atlas">MongoDB Atlas</a>. Document specification powered by SwaggerUI.
-<br>API Endpoints: http://atwt-api.herokuapp.com/
-<br>API docs: https://atwt-api.herokuapp.com/api-docs/</h3>
+<h3 align="center" style="bold">An REST API for testing purpose using <a href="https://nodejs.org/en/">Nodejs</a>, <a href="https://expressjs.com/">Expressjs</a> and hosted on <a href="https://dashboard.heroku.com/">Heroku</a> with <a href="https://www.mongodb.com/cloud/atlas">MongoDB Atlas</a>. Document specification powered by SwaggerUI.</h3>
+
+<h4 align="center">API Endpoints: http://atwt-api.herokuapp.com/
+  <br>API docs: https://atwt-api.herokuapp.com/api-docs/</h4>
 
