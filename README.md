@@ -24,43 +24,61 @@ There are 6 endpoint groups available now:
 1. User
    
    GET  /user : Get all users
+   
    POST /user : Create a user
+   
    GET  /user/{userId} : Get specific user
+   
    GET  /user/{userId}/cars : Get cars of user
    
 2. Car
    
    GET  /car : Get all cars
+   
    POST /car : Create a car
+   
    GET  /car/{carId} : Get specific car
+   
    DELETE  /car/{carId} : Delete a car
    
 3. Factory
    
    GET  /factory : Get all factories
+   
    POST /factory : Create a factory
+   
    GET  /factory/{factoryId} : Get specific factory
+   
    GET  /factory/{factoryId}/foods : Get foods produced by factory
    
 4. Food
    
    GET  /food : Get all foods
+   
    POST /food : Create a food
+   
    GET  /food/{foodId} : Get specific food
+   
    DELETE  /food/{foodId} : Delete food
 
 5. Zoo
    
    GET  /zoo : Get all zoos
+   
    POST /zoo : Create a zoo
+   
    GET  /zoo/{zooId} : Get specific zoo
+   
    GET  /zoo/{zooId}/animals : Get animals live in zoo
    
 6. Animal
    
    GET  /animal : Get all animals
+   
    POST /animal : Create an animal
+   
    GET  /animal/{animalId} : Get specific animal
+   
    DELETE  /animal/{animalId} : Delete animal
    
 ## How to use
