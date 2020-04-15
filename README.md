@@ -67,7 +67,7 @@ https://atwt-api.herokuapp.com/v1/animal
 #### Manual execution via swaggerUI
 Give it a try:
 <h1 align="center">
-  <a href="background"><img src="https://github.com/trongtuyen96/atwt-api/blob/master/api_docs_demo.PNG" alt="background"></a>
+  <a href="https://atwt-api.herokuapp.com/api-docs/"><img src="https://github.com/trongtuyen96/atwt-api/blob/master/api_docs_demo.PNG" alt="background"></a>
 </h1>
 
 ## Author
