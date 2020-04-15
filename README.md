@@ -26,9 +26,9 @@
 There are 6 endpoint groups available now:
 1. User
 
-...GET /user : Get all user
+   GET /user : Get all user
 
-...GET /user/{userId}: Get specific user
+   GET /user/{userId}: Get specific user
 2. Car
 3. Factory
 4. Food
