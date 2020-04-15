@@ -21,39 +21,17 @@
 
 ## Key Examples
 
-- Sample Test: 
-An example where setting up an chrome driver, run simple test and validate result.
-
-- DataProvider Test: 
-Apply dataProvider annotation from TestNG to parameterized input data.
-
-- ExcelPOI Test: 
-Data-Driven with data read from Excel file, excel utilities provided.
-
-- MultiBrowser Test: 
-Execute test on multiple browsers, parallel run allowed.
-
-- ATWTT Test: 
-An test with test page (automatedtestingwithtuyen.com) were built following Page Object Model.
-
-- ATWTT Page Factory Test: 
-An test with test page (automatedtestingwithtuyen.com) were built following Page Factory.
-
-- ExtentReport Test: 
-Apply ExtentReport to generate beautiful, fully-detailed, well-organized result report. Fail screenshots captured.
-
-- Retry Analyzer Test: 
-Automatically retry to execute failed test cases.
-
 ## How to use
 #### Direct request via base URL
-- There are 6 endpoint groups available now:
--- User
--- Car
--- Factory
--- Food
--- Zoo
--- Animal
+There are 6 endpoint groups available now:
+1. User
+.. GET /user : Get all user
+.. GET /user/{userId}: Get specific user
+2. Car
+3. Factory
+4. Food
+5. Zoo
+6. Animal
 #### Manual execution via swaggerUI
 ## Author
 
