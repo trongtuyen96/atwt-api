@@ -1,7 +1,7 @@
 <h1 align="center">
   <br>
-  <a href="background"><img src="https://github.com/trongtuyen96/atwt-api/blob/master/ATWT_background.PNG" alt="background"></a>
-    <a href="background"><img src="https://github.com/trongtuyen96/atwt-api/blob/master/rest_api.PNG" alt="background"></a>
+  <a href="background"><img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/ATWT_background.PNG" alt="background"></a>
+    <a href="background"><img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/rest_api.PNG" alt="background"></a>
   <br>
   ATWT Rest API
   <br>
@@ -92,7 +92,7 @@ https://atwt-api.herokuapp.com/v1/animal
 #### Manual execution via swaggerUI
 Give it a try:
 <h1 align="center">
-  <a href="https://atwt-api.herokuapp.com/api-docs/"><img src="https://github.com/trongtuyen96/atwt-api/blob/master/api_docs_demo.PNG" alt="background"></a>
+  <a href="https://atwt-api.herokuapp.com/api-docs/"><img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/api_docs_demo.PNG" alt="background"></a>
 </h1>
 
 ## Author
