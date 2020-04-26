@@ -23,63 +23,82 @@
 ## Endpoints
 There are 6 endpoint groups available now:
 1. User
+
    <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /user : Get all users
    
    <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/post_badge.PNG" width="60">  /user : Create a user
    
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/put_badge.PNG" width="60">  /user : Update existing user - Disabled
+   
    <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /user/{userId} : Get specific user
+   
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/delete_badge.PNG" width="60">  /user/{userId} : Delete a user - Disabled
    
    <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /user/{userId}/cars : Get cars of user
    
 2. Car
    
-   GET  /car : Get all cars
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /car : Get all cars
    
-   POST /car : Create a car
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/post_badge.PNG" width="60"> /car : Create a car
    
-   GET  /car/{carId} : Get specific car
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/put_badge.PNG" width="60"> /car : Update existing car - Disabled
    
-   DELETE  /car/{carId} : Delete a car
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /car/{carId} : Get specific car
+   
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/delete_badge.PNG" width="60">  /car/{carId} : Delete a car
    
 3. Factory
    
-   GET  /factory : Get all factories
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /factory : Get all factories
    
-   POST /factory : Create a factory
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/post_badge.PNG" width="60"> /factory : Create a factory
    
-   GET  /factory/{factoryId} : Get specific factory
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/put_badge.PNG" width="60"> /factory : Update existing factory - Disabled
    
-   GET  /factory/{factoryId}/foods : Get foods produced by factory
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /factory/{factoryId} : Get specific factory
+   
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/delete_badge.PNG" width="60">  /factory/{factoryId} : Delete a factory - Disabled
+   
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /factory/{factoryId}/foods : Get foods produced by factory
    
 4. Food
    
-   GET  /food : Get all foods
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /food : Get all foods
    
-   POST /food : Create a food
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/post_badge.PNG" width="60"> /food : Create food
    
-   GET  /food/{foodId} : Get specific food
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/put_badge.PNG" width="60"> /food : Update food - Disabled
    
-   DELETE  /food/{foodId} : Delete food
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /food/{foodId} : Get specific food
+   
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/delete_badge.PNG" width="60">  /food/{foodId} : Delete food
 
 5. Zoo
    
-   GET  /zoo : Get all zoos
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /zoo : Get all zoos
    
-   POST /zoo : Create a zoo
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/post_badge.PNG" width="60"> /zoo : Create a zoo
    
-   GET  /zoo/{zooId} : Get specific zoo
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/put_badge.PNG" width="60"> /zoo : Update a zoo - Disabled
    
-   GET  /zoo/{zooId}/animals : Get animals live in zoo
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /zoo/{zooId} : Get specific zoo
+   
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/delete_badge.PNG" width="60">  /zoo/{zooId} : Delete a zoo - Disabled
+   
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /zoo/{zooId}/animals : Get animals live in zoo
    
 6. Animal
    
-   GET  /animal : Get all animals
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /animal : Get all animals
    
-   POST /animal : Create an animal
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/post_badge.PNG" width="60"> /animal : Create an animal
    
-   GET  /animal/{animalId} : Get specific animal
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/put_badge.PNG" width="60"> /animal : Update an animal - Disabled
    
-   DELETE  /animal/{animalId} : Delete animal
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /animal/{animalId} : Get specific animal
+   
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/delete_badge.PNG" width="60">  /animal/{animalId} : Delete animal
    
 ## How to use
 #### Direct request via base URL
