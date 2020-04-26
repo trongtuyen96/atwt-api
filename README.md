@@ -23,15 +23,13 @@
 ## Endpoints
 There are 6 endpoint groups available now:
 1. User
-   <a padding="0">
    <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /user : Get all users
-	</a>
    
-   POST /user : Create a user
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/post_badge.PNG" width="60">  /user : Create a user
    
-   GET  /user/{userId} : Get specific user
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /user/{userId} : Get specific user
    
-   GET  /user/{userId}/cars : Get cars of user
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /user/{userId}/cars : Get cars of user
    
 2. Car
    
