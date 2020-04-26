@@ -21,10 +21,11 @@
 - [License](#license)
 
 ## Endpoints
+	\xF0\x9F\x99\x8F
 There are 6 endpoint groups available now:
 1. User
    
-   <p style="color:red;">GET</p>  /user : Get all users
+   GET  /user : Get all users
    
    POST /user : Create a user
    
