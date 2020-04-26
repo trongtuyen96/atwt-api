@@ -21,7 +21,6 @@
 - [License](#license)
 
 ## Endpoints
-	\xF0\x9F\x99\x8F
 There are 6 endpoint groups available now:
 1. User
    
