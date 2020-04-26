@@ -23,8 +23,9 @@
 ## Endpoints
 There are 6 endpoint groups available now:
 1. User
-   
+   <a padding="0">
    <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /user : Get all users
+	</a>
    
    POST /user : Create a user
    
