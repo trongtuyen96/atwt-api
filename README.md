@@ -24,7 +24,7 @@
 There are 6 endpoint groups available now:
 1. User
    
-   <p style="color:red">GET</p>  /user : Get all users
+   <p style="color:red;">GET</p>  /user : Get all users
    
    POST /user : Create a user
    
