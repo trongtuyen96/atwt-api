@@ -1,7 +1,7 @@
 <h1 align="center">
   <br>
   <a href="background"><img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/ATWT_background.PNG" alt="background"></a>
-    <a href="background"><img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/rest_api.PNG" alt="background"></a>
+  <a href="background"><img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/rest_api.PNG" alt="background"></a>
   <br>
   ATWT Rest API
   <br>
