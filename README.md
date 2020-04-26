@@ -22,7 +22,7 @@
 
 ## Endpoints
 There are 6 endpoint groups available now:
-1. User
+###### 1. User
    
    GET  /user : Get all users
    
@@ -32,7 +32,7 @@ There are 6 endpoint groups available now:
    
    GET  /user/{userId}/cars : Get cars of user
    
-2. Car
+###### 2. Car
    
    GET  /car : Get all cars
    
@@ -42,7 +42,7 @@ There are 6 endpoint groups available now:
    
    DELETE  /car/{carId} : Delete a car
    
-3. Factory
+###### 3. Factory
    
    GET  /factory : Get all factories
    
@@ -52,7 +52,7 @@ There are 6 endpoint groups available now:
    
    GET  /factory/{factoryId}/foods : Get foods produced by factory
    
-4. Food
+###### 4. Food
    
    GET  /food : Get all foods
    
@@ -62,7 +62,7 @@ There are 6 endpoint groups available now:
    
    DELETE  /food/{foodId} : Delete food
 
-5. Zoo
+###### 5. Zoo
    
    GET  /zoo : Get all zoos
    
@@ -72,7 +72,7 @@ There are 6 endpoint groups available now:
    
    GET  /zoo/{zooId}/animals : Get animals live in zoo
    
-6. Animal
+###### 6. Animal
    
    GET  /animal : Get all animals
    
