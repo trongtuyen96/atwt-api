@@ -17,12 +17,13 @@ const app = express();
 
 // Connect to mongo db cloud
 // If you met a problem that you can connect but cannot write, it may from the whitelist IP, update it to 0.0.0.0/0 in Network Access -> IP Adress, which allows all access
-mongoose.connect(config.database_mongo_cloud, { useNewUrlParser: true });
+mongoose.connect(config.database_mongo_cloud, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
 mongoose.connection.once('open', () => {
     console.log('Connect to database successfuly');
 }).on('error', () => {
     console.log('Conmect to database failed')
 });
+
 
 // app.use(bodyParser({limit: '5mb'}))
 app.use(bodyParser.json({ limit: "50mb" }));
