@@ -75,6 +75,12 @@ router.get("/car", authenticate, (req, res, next) => {
 // Get user by ID
 router.get("/:id", (req, res, next) => {
     let userID = req.params.id;
+    if (!mongoose.Types.ObjectId.isValid(userID)) {
+        return res.status(404).json({
+            success: false,
+            message: "User not found"
+        })
+    }
     User
         .findById(userID)
         .then((user) => {
