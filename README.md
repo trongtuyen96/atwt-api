@@ -1,7 +1,7 @@
 <h1 align="center">
   <br>
-  <a href="background"><img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/ATWT_background.PNG" alt="background"></a>
-  <a href="background"><img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/rest_api.PNG" alt="background"></a>
+  <a><img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/ATWT_background.PNG" alt="background"></a>
+  <a><img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/rest_api.PNG" alt="rest api"></a>
   <br>
   ATWT Rest API
   <br>
@@ -14,7 +14,6 @@
   <br>API docs: https://atwt-api.herokuapp.com/api-docs/</h4>
 
 ## Table of Contents
-
 - [Endpoints](#endpoints)
 - [How To Use](#how-to-use)
 - [Author](#author)
@@ -114,7 +113,6 @@ Give it a try:
 </h1>
 
 ## Author
-
 <h4 align="center">
 	Tuyen Nguyen - QA Automation Engineer
 	</h4>
@@ -134,7 +132,6 @@ Give it a try:
 </p>
 
 ## License
-
 ~~~~
 Copyright 2020 Tuyen Nguyen
 
