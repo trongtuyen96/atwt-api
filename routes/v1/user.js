@@ -75,10 +75,10 @@ router.get("/car", authenticate, (req, res, next) => {
 // Get user by ID
 router.get("/:id", (req, res, next) => {
     let userID = req.params.id;
-    Car
+    User
         .findById(userID)
         .then((user) => {
-            if (!car) {
+            if (!user) {
                 return res.status(404).json({
                     success: false,
                     message: "User not found"
