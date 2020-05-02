@@ -6,6 +6,12 @@ const Food = require('../../models/food')
 // Get food by ID
 router.get("/:id", (req, res, next) => {
     let foodID = req.params.id;
+    if (!mongoose.Types.ObjectId.isValid(foodID)) {
+        return res.status(404).json({
+            success: false,
+            message: "Food not found"
+        })
+    }
     Food
         .findById(foodID)
         .then((food) => {
@@ -45,6 +51,12 @@ router.post("/", (req, res, next) => {
 // Delete food
 router.delete("/:id", (req, res, next) => {
     let foodID = req.params.id;
+    if (!mongoose.Types.ObjectId.isValid(foodID)) {
+        return res.status(404).json({
+            success: false,
+            message: "Food not found"
+        })
+    }
     Food
         .findByIdAndRemove(foodID)
         .then(() => {

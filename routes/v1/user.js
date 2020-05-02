@@ -107,6 +107,12 @@ router.get("/", (req, res, next) => {
 // Get all cars of user
 router.get("/:id/cars", (req, res, next) => {
     let userID = req.params.id;
+    if (!mongoose.Types.ObjectId.isValid(userID)) {
+        return res.status(404).json({
+            success: false,
+            message: "User not found"
+        })
+    }
     Car.find({ userID: userID })
         .then((cars) => {
             return res.status(200).json(

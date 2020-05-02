@@ -6,6 +6,12 @@ const Animal = require('../../models/animal')
 // Get animal by ID
 router.get("/:id", (req, res, next) => {
     let animalID = req.params.id;
+    if (!mongoose.Types.ObjectId.isValid(animalID)) {
+        return res.status(404).json({
+            success: false,
+            message: "Animal not found"
+        })
+    }
     Car
         .findById(animalID)
         .then((animal) => {
@@ -45,9 +51,15 @@ router.post("/", (req, res, next) => {
 
 // Delete an animal
 router.delete("/:id", (req, res, next) => {
-    let animalId = req.params.id;
+    let animalID = req.params.id;
+    if (!mongoose.Types.ObjectId.isValid(animalID)) {
+        return res.status(404).json({
+            success: false,
+            message: "Animal not found"
+        })
+    }
     Animal
-        .findByIdAndRemove(animalId)
+        .findByIdAndRemove(animalID)
         .then(() => {
             return res.status(200).send({
                 success: true

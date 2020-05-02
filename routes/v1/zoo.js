@@ -7,6 +7,12 @@ const Animal = require('../../models/animal')
 // Get zoo by ID
 router.get("/:id", (req, res, next) => {
     let zooID = req.params.id;
+    if (!mongoose.Types.ObjectId.isValid(zooID)) {
+        return res.status(404).json({
+            success: false,
+            message: "Zoo not found"
+        })
+    }
     Zoo
         .findById(zooID)
         .then((zoo) => {
@@ -32,6 +38,12 @@ router.get("/", (req, res, next) => {
 // Get all animals of zoo
 router.get("/:id/animals", (req, res, next) => {
     let zooID = req.params.id;
+    if (!mongoose.Types.ObjectId.isValid(zooID)) {
+        return res.status(404).json({
+            success: false,
+            message: "Zoo not found"
+        })
+    }
     Animal.find({ zooID: zooID })
         .then((animals) => {
             return res.status(200).json(

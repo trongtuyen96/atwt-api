@@ -7,6 +7,12 @@ const Food = require('../../models/food')
 // Get factory by ID
 router.get("/:id", (req, res, next) => {
     let factoryID = req.params.id;
+    if (!mongoose.Types.ObjectId.isValid(factoryID)) {
+        return res.status(404).json({
+            success: false,
+            message: "Factory not found"
+        })
+    }
     Factory
         .findById(factoryID)
         .then((factory) => {
@@ -32,6 +38,12 @@ router.get("/", (req, res, next) => {
 // Get all foods of factory
 router.get("/:id/foods", (req, res, next) => {
     let factoryID = req.params.id;
+    if (!mongoose.Types.ObjectId.isValid(factoryID)) {
+        return res.status(404).json({
+            success: false,
+            message: "Factory not found"
+        })
+    }
     Food.find({ factoryID: factoryID })
         .then((foods) => {
             return res.status(200).json(
