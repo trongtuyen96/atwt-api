@@ -105,7 +105,7 @@
                     "user"
                 ],
                 "summary": "Update an existing user",
-                "description": "Blocked",
+                "description": "",
                 "operationId": "putUser",
                 "consumes": [
                     "application/json"
@@ -125,6 +125,9 @@
                     }
                 ],
                 "responses": {
+                    "201": {
+                        "description": "Update successfully"
+                    },
                     "400": {
                         "description": "Invalid Id supplied"
                     },
@@ -134,8 +137,7 @@
                     "405": {
                         "description": "Validation exception"
                     }
-                },
-                "deprecated": true
+                }
             }
         },
         "/user/{userId}": {
@@ -299,7 +301,7 @@
                     "car"
                 ],
                 "summary": "Update an existing car",
-                "description": "Blocked",
+                "description": "",
                 "operationId": "putCar",
                 "consumes": [
                     "application/json"
@@ -319,6 +321,9 @@
                     }
                 ],
                 "responses": {
+                    "201": {
+                        "description": "Update successfully"
+                    },
                     "400": {
                         "description": "Invalid Id supplied"
                     },
@@ -328,8 +333,7 @@
                     "405": {
                         "description": "Validation exception"
                     }
-                },
-                "deprecated": true
+                }
             }
         },
         "/car/{carId}": {
@@ -455,7 +459,7 @@
                     "factory"
                 ],
                 "summary": "Update an existing factory",
-                "description": "Blocked",
+                "description": "",
                 "operationId": "putFactory",
                 "consumes": [
                     "application/json"
@@ -475,6 +479,9 @@
                     }
                 ],
                 "responses": {
+                    "201": {
+                        "description": "Update successfully"
+                    },
                     "400": {
                         "description": "Invalid Id supplied"
                     },
@@ -484,8 +491,7 @@
                     "405": {
                         "description": "Validation exception"
                     }
-                },
-                "deprecated": true
+                }
             }
         },
         "/factory/{factoryId}": {
@@ -649,7 +655,7 @@
                     "food"
                 ],
                 "summary": "Update an existing food",
-                "description": "Blocked",
+                "description": "",
                 "operationId": "putFood",
                 "consumes": [
                     "application/json"
@@ -669,6 +675,9 @@
                     }
                 ],
                 "responses": {
+                    "201": {
+                        "description": "Update successfully"
+                    },
                     "400": {
                         "description": "Invalid Id supplied"
                     },
@@ -678,8 +687,7 @@
                     "405": {
                         "description": "Validation exception"
                     }
-                },
-                "deprecated": true
+                }
             }
         },
         "/food/{foodId}": {
@@ -805,7 +813,7 @@
                     "zoo"
                 ],
                 "summary": "Update an existing zoo",
-                "description": "Blocked",
+                "description": "",
                 "operationId": "putZoo",
                 "consumes": [
                     "application/json"
@@ -825,6 +833,9 @@
                     }
                 ],
                 "responses": {
+                    "201": {
+                        "description": "Update successfully"
+                    },
                     "400": {
                         "description": "Invalid Id supplied"
                     },
@@ -834,8 +845,7 @@
                     "405": {
                         "description": "Validation exception"
                     }
-                },
-                "deprecated": true
+                }
             }
         },
         "/zoo/{zooId}": {
@@ -999,7 +1009,7 @@
                     "animal"
                 ],
                 "summary": "Update an existing animal",
-                "description": "Blocked",
+                "description": "",
                 "operationId": "putAnimal",
                 "consumes": [
                     "application/json"
@@ -1019,6 +1029,9 @@
                     }
                 ],
                 "responses": {
+                    "201": {
+                        "description": "Update successfully"
+                    },
                     "400": {
                         "description": "Invalid Id supplied"
                     },
@@ -1028,8 +1041,7 @@
                     "405": {
                         "description": "Validation exception"
                     }
-                },
-                "deprecated": true
+                }
             }
         },
         "/animal/{animalId}": {
