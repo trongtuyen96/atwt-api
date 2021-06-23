@@ -115,6 +115,13 @@
                 ],
                 "parameters": [
                     {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "Id of user to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
                         "in": "body",
                         "name": "body",
                         "description": "User object that needs to be updated",
@@ -311,6 +318,13 @@
                 ],
                 "parameters": [
                     {
+                        "name": "carId",
+                        "in": "path",
+                        "description": "Id of car to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
                         "in": "body",
                         "name": "body",
                         "description": "Car object that needs to be updated",
@@ -468,6 +482,13 @@
                     "application/json"
                 ],
                 "parameters": [
+                    {
+                        "name": "factoryId",
+                        "in": "path",
+                        "description": "Id of factory to update",
+                        "required": true,
+                        "type": "string"
+                    },
                     {
                         "in": "body",
                         "name": "body",
@@ -665,6 +686,13 @@
                 ],
                 "parameters": [
                     {
+                        "name": "foodId",
+                        "in": "path",
+                        "description": "Id of food to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
                         "in": "body",
                         "name": "body",
                         "description": "Food object that needs to be updated",
@@ -822,6 +850,13 @@
                     "application/json"
                 ],
                 "parameters": [
+                    {
+                        "name": "zooId",
+                        "in": "path",
+                        "description": "Id of zoo to update",
+                        "required": true,
+                        "type": "string"
+                    },
                     {
                         "in": "body",
                         "name": "body",
@@ -1018,6 +1053,13 @@
                     "application/json"
                 ],
                 "parameters": [
+                    {
+                        "name": "animalId",
+                        "in": "path",
+                        "description": "Id of animal to update",
+                        "required": true,
+                        "type": "string"
+                    },
                     {
                         "in": "body",
                         "name": "body",
