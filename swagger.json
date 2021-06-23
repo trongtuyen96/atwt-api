@@ -99,6 +99,42 @@
                         "description": "Invalid input"
                     }
                 }
+            }
+        },
+        "/user/{userId}": {
+            "get": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Find user by Id",
+                "description": "Returns a single user",
+                "operationId": "getUserById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "Id of user to return",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Id supplied"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
             },
             "put": {
                 "tags": [
@@ -143,42 +179,6 @@
                     },
                     "405": {
                         "description": "Validation exception"
-                    }
-                }
-            }
-        },
-        "/user/{userId}": {
-            "get": {
-                "tags": [
-                    "user"
-                ],
-                "summary": "Find user by Id",
-                "description": "Returns a single user",
-                "operationId": "getUserById",
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "userId",
-                        "in": "path",
-                        "description": "Id of user to return",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful operation",
-                        "schema": {
-                            "$ref": "#/definitions/User"
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid Id supplied"
-                    },
-                    "404": {
-                        "description": "User not found"
                     }
                 }
             },
@@ -302,6 +302,42 @@
                         "description": "Invalid input"
                     }
                 }
+            }
+        },
+        "/car/{carId}": {
+            "get": {
+                "tags": [
+                    "car"
+                ],
+                "summary": "Find car by Id",
+                "description": "Returns a single car",
+                "operationId": "getCarById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "carId",
+                        "in": "path",
+                        "description": "Id of car to return",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Car"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Id supplied"
+                    },
+                    "404": {
+                        "description": "Car not found"
+                    }
+                }
             },
             "put": {
                 "tags": [
@@ -346,42 +382,6 @@
                     },
                     "405": {
                         "description": "Validation exception"
-                    }
-                }
-            }
-        },
-        "/car/{carId}": {
-            "get": {
-                "tags": [
-                    "car"
-                ],
-                "summary": "Find car by Id",
-                "description": "Returns a single car",
-                "operationId": "getCarById",
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "carId",
-                        "in": "path",
-                        "description": "Id of car to return",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful operation",
-                        "schema": {
-                            "$ref": "#/definitions/Car"
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid Id supplied"
-                    },
-                    "404": {
-                        "description": "Car not found"
                     }
                 }
             },
@@ -467,6 +467,42 @@
                         "description": "Invalid input"
                     }
                 }
+            }
+        },
+        "/factory/{factoryId}": {
+            "get": {
+                "tags": [
+                    "factory"
+                ],
+                "summary": "Find factory by Id",
+                "description": "Returns a single factory",
+                "operationId": "getFactoryById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "factoryId",
+                        "in": "path",
+                        "description": "Id of factory to return",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Factory"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Id supplied"
+                    },
+                    "404": {
+                        "description": "Factory not found"
+                    }
+                }
             },
             "put": {
                 "tags": [
@@ -511,42 +547,6 @@
                     },
                     "405": {
                         "description": "Validation exception"
-                    }
-                }
-            }
-        },
-        "/factory/{factoryId}": {
-            "get": {
-                "tags": [
-                    "factory"
-                ],
-                "summary": "Find factory by Id",
-                "description": "Returns a single factory",
-                "operationId": "getFactoryById",
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "factoryId",
-                        "in": "path",
-                        "description": "Id of factory to return",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful operation",
-                        "schema": {
-                            "$ref": "#/definitions/Factory"
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid Id supplied"
-                    },
-                    "404": {
-                        "description": "Factory not found"
                     }
                 }
             },
@@ -670,6 +670,42 @@
                         "description": "Invalid input"
                     }
                 }
+            }
+        },
+        "/food/{foodId}": {
+            "get": {
+                "tags": [
+                    "food"
+                ],
+                "summary": "Find food by Id",
+                "description": "Returns a single food",
+                "operationId": "getFoodById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "foodId",
+                        "in": "path",
+                        "description": "Id of food to return",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Food"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Id supplied"
+                    },
+                    "404": {
+                        "description": "Food not found"
+                    }
+                }
             },
             "put": {
                 "tags": [
@@ -714,42 +750,6 @@
                     },
                     "405": {
                         "description": "Validation exception"
-                    }
-                }
-            }
-        },
-        "/food/{foodId}": {
-            "get": {
-                "tags": [
-                    "food"
-                ],
-                "summary": "Find food by Id",
-                "description": "Returns a single food",
-                "operationId": "getFoodById",
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "foodId",
-                        "in": "path",
-                        "description": "Id of food to return",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful operation",
-                        "schema": {
-                            "$ref": "#/definitions/Food"
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid Id supplied"
-                    },
-                    "404": {
-                        "description": "Food not found"
                     }
                 }
             },
@@ -835,6 +835,42 @@
                         "description": "Invalid input"
                     }
                 }
+            }
+        },
+        "/zoo/{zooId}": {
+            "get": {
+                "tags": [
+                    "zoo"
+                ],
+                "summary": "Find zoo by Id",
+                "description": "Returns a single zoo",
+                "operationId": "getZooById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "zooId",
+                        "in": "path",
+                        "description": "Id of zoo to return",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Zoo"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Id supplied"
+                    },
+                    "404": {
+                        "description": "Zoo not found"
+                    }
+                }
             },
             "put": {
                 "tags": [
@@ -879,42 +915,6 @@
                     },
                     "405": {
                         "description": "Validation exception"
-                    }
-                }
-            }
-        },
-        "/zoo/{zooId}": {
-            "get": {
-                "tags": [
-                    "zoo"
-                ],
-                "summary": "Find zoo by Id",
-                "description": "Returns a single zoo",
-                "operationId": "getZooById",
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "zooId",
-                        "in": "path",
-                        "description": "Id of zoo to return",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful operation",
-                        "schema": {
-                            "$ref": "#/definitions/Zoo"
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid Id supplied"
-                    },
-                    "404": {
-                        "description": "Zoo not found"
                     }
                 }
             },
@@ -1038,6 +1038,42 @@
                         "description": "Invalid input"
                     }
                 }
+            }
+        },
+        "/animal/{animalId}": {
+            "get": {
+                "tags": [
+                    "animal"
+                ],
+                "summary": "Find animal by Id",
+                "description": "Returns a single animal",
+                "operationId": "getAnimalById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "animalId",
+                        "in": "path",
+                        "description": "Id of animal to return",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Animal"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Id supplied"
+                    },
+                    "404": {
+                        "description": "Animal not found"
+                    }
+                }
             },
             "put": {
                 "tags": [
@@ -1082,42 +1118,6 @@
                     },
                     "405": {
                         "description": "Validation exception"
-                    }
-                }
-            }
-        },
-        "/animal/{animalId}": {
-            "get": {
-                "tags": [
-                    "animal"
-                ],
-                "summary": "Find animal by Id",
-                "description": "Returns a single animal",
-                "operationId": "getAnimalById",
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "animalId",
-                        "in": "path",
-                        "description": "Id of animal to return",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful operation",
-                        "schema": {
-                            "$ref": "#/definitions/Animal"
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid Id supplied"
-                    },
-                    "404": {
-                        "description": "Animal not found"
                     }
                 }
             },
