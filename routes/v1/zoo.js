@@ -54,6 +54,16 @@ router.get("/:id/animals", (req, res, next) => {
 
 // Create a zoo
 router.post("/", (req, res, next) => {
+    if (!req.body.name
+        || !req.body.location
+        || !req.body.country
+        || !req.body.license
+        || !req.body.year) {
+        return res.status(400).json({
+            success: fail,
+            message: "Missing required fields"
+        });
+    }
     let zoo = new Zoo({
         name: req.body.name,
         location: req.body.location,
@@ -65,6 +75,37 @@ router.post("/", (req, res, next) => {
         res.send(zoo)
     }).catch(next);
 });
+
+// Update a zoo by id
+router.put("/:id", (req, res, next) => {
+    if (!req.body) {
+        return res.status(400).send({
+            message: "Data to update can not be empty"
+        });
+    }
+    let zooID = req.params.id;
+    if (!mongoose.Types.ObjectId.isValid(zooID)) {
+        return res.status(404).json({
+            success: false,
+            message: "Zoo not found"
+        })
+    }
+    Zoo
+        .findByIdAndUpdate(zooID, req.body, { useFindAndModify: false })
+        .then(zoo => {
+            if (!zoo) {
+                return res.status(400).json({
+                    success: false,
+                    message: `Cannot update Zoo with id = ${userID}`
+                })
+            } else {
+                return res.status(201).json({
+                    zoo
+                })
+            }
+        })
+        .catch(next);
+})
 
 // Delete a zoo
 /* router.delete("/:id", (req, res, next) => {

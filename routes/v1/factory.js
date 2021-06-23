@@ -54,6 +54,17 @@ router.get("/:id/foods", (req, res, next) => {
 
 // Create a factory
 router.post("/", (req, res, next) => {
+    if (!req.body.species
+        || !req.body.name
+        || !req.body.location
+        || !req.body.country
+        || !req.body.license
+        || !req.body.year) {
+        return res.status(400).json({
+            success: fail,
+            message: "Missing required fields"
+        });
+    }
     let factory = new Factory({
         name: req.body.name,
         location: req.body.location,
@@ -65,6 +76,37 @@ router.post("/", (req, res, next) => {
         res.send(factory)
     }).catch(next);
 });
+
+// Update a factory by id
+router.put("/:id", (req, res, next) => {
+    if (!req.body) {
+        return res.status(400).send({
+            message: "Data to update can not be empty"
+        });
+    }
+    let factoryID = req.params.id;
+    if (!mongoose.Types.ObjectId.isValid(factoryID)) {
+        return res.status(404).json({
+            success: false,
+            message: "Factory not found"
+        })
+    }
+    Factory
+        .findByIdAndUpdate(factoryID, req.body, { useFindAndModify: false })
+        .then(factory => {
+            if (!factory) {
+                return res.status(400).json({
+                    success: false,
+                    message: `Cannot update Factory with id = ${userID}`
+                })
+            } else {
+                return res.status(201).json({
+                    factory
+                })
+            }
+        })
+        .catch(next);
+})
 
 // Delete a factory
 /* router.delete("/:id", (req, res, next) => {

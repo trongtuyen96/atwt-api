@@ -123,6 +123,16 @@ router.get("/:id/cars", (req, res, next) => {
 
 // Create new user
 router.post("/", (req, res, next) => {
+    if (!req.body.email
+        || !req.body.password
+        || !req.body.name
+        || !req.body.birthDate
+        || !req.body.phoneNumber) {
+        return res.status(400).json({
+            success: fail,
+            message: "Missing required fields"
+        });
+    }
     let user = new User({
         email: req.body.email,
         password: req.body.password,
@@ -134,6 +144,36 @@ router.post("/", (req, res, next) => {
         res.send(user)
     }).catch(next);
 });
+
+// Update a user by id
+router.put("/:id", (req, res, next) => {
+    if (!req.body) {
+        return res.status(400).send({
+            message: "Data to update can not be empty"
+        });
+    }
+    let userID = req.params.id;
+    if (!mongoose.Types.ObjectId.isValid(userID)) {
+        return res.status(404).json({
+            success: false,
+            message: "User not found"
+        })
+    }
+    User
+        .findByIdAndUpdate(userID, req.body, { useFindAndModify: false })
+        .then(user => {
+            if (!user) {
+                return res.status(400).json({
+                    success: false,
+                    message: `Cannot update User with id = ${userID}`
+                })
+            } else {
+                return res.status(201).json({
+                    user
+                })
+            }
+        }).catch(next);
+})
 
 // Delete a user
 /* router.delete("/:id", (req, res, next) => {
