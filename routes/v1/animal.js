@@ -75,7 +75,7 @@ router.put("/:id", (req, res, next) => {
         })
     }
     Animal
-        .findByIdAndUpdate(animalID, req.body, { useFindAndModify: false })
+        .findByIdAndUpdate(animalID, req.body, { new: true, useFindAndModify: false })
         .then(animal => {
             if (!animal) {
                 return res.status(400).json({

@@ -73,7 +73,7 @@ router.put("/:id", (req, res, next) => {
         })
     }
     Car
-        .findByIdAndUpdate(carID, req.body, { useFindAndModify: false })
+        .findByIdAndUpdate(carID, req.body, { new: true, useFindAndModify: false })
         .then(car => {
             if (!car) {
                 return res.status(400).json({

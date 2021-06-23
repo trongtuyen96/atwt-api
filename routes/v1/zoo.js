@@ -91,7 +91,7 @@ router.put("/:id", (req, res, next) => {
         })
     }
     Zoo
-        .findByIdAndUpdate(zooID, req.body, { useFindAndModify: false })
+        .findByIdAndUpdate(zooID, req.body, { new: true, useFindAndModify: false })
         .then(zoo => {
             if (!zoo) {
                 return res.status(400).json({

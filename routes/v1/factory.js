@@ -92,7 +92,7 @@ router.put("/:id", (req, res, next) => {
         })
     }
     Factory
-        .findByIdAndUpdate(factoryID, req.body, { useFindAndModify: false })
+        .findByIdAndUpdate(factoryID, req.body, { new: true, useFindAndModify: false })
         .then(factory => {
             if (!factory) {
                 return res.status(400).json({

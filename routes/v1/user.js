@@ -160,7 +160,7 @@ router.put("/:id", (req, res, next) => {
         })
     }
     User
-        .findByIdAndUpdate(userID, req.body, { useFindAndModify: false })
+        .findByIdAndUpdate(userID, req.body, { new: true, useFindAndModify: false })
         .then(user => {
             if (!user) {
                 return res.status(400).json({

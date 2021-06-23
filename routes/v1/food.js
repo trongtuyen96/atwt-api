@@ -74,7 +74,7 @@ router.put("/:id", (req, res, next) => {
         })
     }
     Food
-        .findByIdAndUpdate(foodID, req.body, { useFindAndModify: false })
+        .findByIdAndUpdate(foodID, req.body, { new: true, useFindAndModify: false })
         .then(food => {
             if (!food) {
                 return res.status(400).json({
