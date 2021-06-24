@@ -131,11 +131,19 @@ router.get("/", (req, res, next) => {
         });
     }
 
-    User.find().and(condition).then((users) => {
-        return res.status(200).json(
-            users
-        );
-    }).catch(next);
+    if (!condition) {
+        User.find().and(condition).then((users) => {
+            return res.status(200).json(
+                users
+            );
+        }).catch(next);
+    } else {
+        User.find({}).then((users) => {
+            return res.status(200).json(
+                users
+            );
+        }).catch(next);
+    }
 });
 
 // Get all cars of user
