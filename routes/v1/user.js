@@ -96,14 +96,14 @@ router.get("/:id", (req, res, next) => {
         }).catch(next);
 });
 
-// Get all users
-router.get("/", (req, res, next) => {
-    User.find({}).then((users) => {
-        return res.status(200).json(
-            users
-        );
-    }).catch(next);
-});
+// // Get all users
+// router.get("/", (req, res, next) => {
+//     User.find({}).then((users) => {
+//         return res.status(200).json(
+//             users
+//         );
+//     }).catch(next);
+// });
 
 // Get users with conditions
 router.get("/", (req, res, next) => {
