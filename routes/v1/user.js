@@ -127,7 +127,7 @@ router.get("/", (req, res, next) => {
     let _birthDate = req.query.birthDate;
     if (_birthDate) {
         condition.push({
-            birthDate: { $gte: _birthDate }
+            birthDate: { $gte: new Date(_birthDate) }
         });
     }
 
