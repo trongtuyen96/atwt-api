@@ -112,14 +112,14 @@ router.get("/", (req, res, next) => {
     // Find name with regex
     let name = req.query.name;
     if (name) {
-        condition.push(name ? { name: { $regex: new RegExp(name), $options: "i" } } : {});
+        condition.push({ name: { $regex: new RegExp(name), $options: "i" } });
     }
 
     // Find exact phone number
     let phoneNumber = req.query.phoneNumber;
     if (phoneNumber) {
         condition.push({
-            "phoneNumber": phoneNumber
+            phoneNumber: phoneNumber
         });
     }
 
