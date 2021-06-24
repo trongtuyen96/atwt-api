@@ -126,8 +126,9 @@ router.get("/", (req, res, next) => {
     // Find birthDate greater than or equal given date
     let _birthDate = req.query.birthDate;
     if (_birthDate) {
+        let _birthDateToCompare = _birthDate + 'T00:00:00.000Z'
         condition.push({
-            birthDate: { $gte: new Date(_birthDate).toISOString() }
+            birthDate: { $gte: _birthDateToCompare }
         });
     }
 
