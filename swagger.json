@@ -74,7 +74,8 @@
                         "in": "query",
                         "name": "birthDate",
                         "description": "Birth date of user (greater than or equal)",
-                        "type": "date"
+                        "type": "string",
+                        "format": "date"
                     }
                 ],
                 "responses": {
