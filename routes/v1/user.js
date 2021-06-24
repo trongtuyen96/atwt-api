@@ -110,24 +110,24 @@ router.get("/", (req, res, next) => {
     let condition = [];
 
     // Find name with regex
-    let name = req.query.name;
-    if (name) {
-        condition.push({ name: { $regex: new RegExp(name), $options: "i" } });
+    let _name = req.query.name;
+    if (_name) {
+        condition.push({ name: { $regex: new RegExp(_name), $options: "i" } });
     }
 
     // Find exact phone number
-    let phoneNumber = req.query.phoneNumber;
-    if (phoneNumber) {
+    let _phoneNumber = req.query.phoneNumber;
+    if (_phoneNumber) {
         condition.push({
-            phoneNumber: phoneNumber
+            phoneNumber: _phoneNumber
         });
     }
 
     // Find birthDate greater than or equal given date
-    let birthDate = req.query.birthDate;
-    if (birthDate) {
+    let _birthDate = req.query.birthDate;
+    if (_birthDate) {
         condition.push({
-            birthDate: { $gte: new Date(birthDate) }
+            birthDate: { $gte: new Date(_birthDate) }
         });
     }
 
