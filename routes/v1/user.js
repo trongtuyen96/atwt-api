@@ -131,7 +131,7 @@ router.get("/", (req, res, next) => {
         });
     }
 
-    User.find({ condition }).then((users) => {
+    User.find(condition).then((users) => {
         return res.status(200).json(
             users
         );
