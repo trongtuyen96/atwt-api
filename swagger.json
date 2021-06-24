@@ -51,11 +51,31 @@
                 "tags": [
                     "user"
                 ],
-                "summary": "Get all users",
+                "summary": "Get user with condition",
                 "description": "",
-                "operationId": "getAllUser",
+                "operationId": "getUser",
                 "produces": [
                     "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "name",
+                        "description": "Name of user",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "phoneNumber",
+                        "description": "Phone number of user",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "birthDate",
+                        "description": "Birth date of user (greater than or equal)",
+                        "type": "date"
+                    }
                 ],
                 "responses": {
                     "200": {

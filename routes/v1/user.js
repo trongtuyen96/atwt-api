@@ -2,6 +2,7 @@ const express = require('express');
 const User = require('../../models/user');
 const Car = require('../../models/car');
 const mongoose = require('mongoose');
+const { query } = require('express');
 const router = express.Router();
 
 // // Require authenticate
@@ -98,6 +99,39 @@ router.get("/:id", (req, res, next) => {
 // Get all users
 router.get("/", (req, res, next) => {
     User.find({}).then((users) => {
+        return res.status(200).json(
+            users
+        );
+    }).catch(next);
+});
+
+// Get users with conditions
+router.get("/", (req, res, next) => {
+    let condition = [];
+
+    // Find name with regex
+    let name = req.query.name;
+    if (name) {
+        condition.push(name ? { name: { $regex: new RegExp(name), $options: "i" } } : {});
+    }
+
+    // Find exact phone number
+    let phoneNumber = req.query.phoneNumber;
+    if (phoneNumber) {
+        condition.push({
+            "phoneNumber": phoneNumber
+        });
+    }
+
+    // Find birthDate greater than or equal given date
+    let birthDate = req.query.birthDate;
+    if (birthDate) {
+        condition.push({
+            "birthDate": { $gte: birthDate }
+        });
+    }
+
+    User.find({ condition }).then((users) => {
         return res.status(200).json(
             users
         );
