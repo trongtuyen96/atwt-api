@@ -132,7 +132,7 @@ router.get("/", (req, res, next) => {
         });
     }
 
-    if (!condition) {
+    if (condition.length > 0) {
         User.find().and(condition).then((users) => {
             return res.status(200).json(
                 users
