@@ -25,13 +25,66 @@ router.get("/:id", (req, res, next) => {
         }).catch(next);
 });
 
-// Get all animals
+// // Get all animals
+// router.get("/", (req, res, next) => {
+//     Animal.find({}).then((animals) => {
+//         return res.status(200).json(
+//             animals
+//         );
+//     }).catch(next);
+// });
+
+// Get animals with conditions
 router.get("/", (req, res, next) => {
-    Animal.find({}).then((animals) => {
-        return res.status(200).json(
-            animals
-        );
-    }).catch(next);
+    let condition = [];
+
+    // Find name with regex
+    let _name = req.query.name;
+    if (_name) {
+        condition.push({ name: { $regex: new RegExp(_name), $options: "i" } });
+    }
+
+    // Find species with regex
+    let _species = req.query.species;
+    if (_species) {
+        condition.push({ species: { $regex: new RegExp(_species), $options: "i" } });
+    }
+
+    // Find color with regex
+    let _color = req.query.color;
+    if (_color) {
+        condition.push({ color: { $regex: new RegExp(_color), $options: "i" } });
+    }
+
+    // Find weight greater than or equal given weight
+    let _weight = req.query.weight;
+    if (_weight) {
+        condition.push({
+            weight: { $gte: _weight }
+        });
+    }
+
+    // Find lifespan greater than or equal given lifespan
+    let _lifespan = req.query.lifespan;
+    if (_lifespan) {
+        condition.push({
+            lifespan: { $gte: _lifespan }
+        });
+    }
+
+    if (condition.length > 0) {
+        Animal.find().and(condition).then((animals) => {
+            return res.status(200).json(
+                animals
+            );
+        }).catch(next);
+    } else {
+        Animal.find({}).then((animals) => {
+            return res.status(200).json(
+                animals
+            );
+        }).catch(next);
+    }
 });
 
 // Create an animal

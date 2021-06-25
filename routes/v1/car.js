@@ -25,13 +25,58 @@ router.get("/:id", (req, res, next) => {
         }).catch(next);
 });
 
-// Get all cars
+// // Get all cars
+// router.get("/", (req, res, next) => {
+//     Car.find({}).then((cars) => {
+//         return res.status(200).json(
+//             cars
+//         );
+//     }).catch(next);
+// });
+
+// Get cars with conditions
 router.get("/", (req, res, next) => {
-    Car.find({}).then((cars) => {
-        return res.status(200).json(
-            cars
-        );
-    }).catch(next);
+    let condition = [];
+
+    // Find type with regex
+    let _type = req.query.type;
+    if (_type) {
+        condition.push({ type: { $regex: new RegExp(_type), $options: "i" } });
+    }
+
+    // Find model with regex
+    let _model = req.query.model;
+    if (_model) {
+        condition.push({ model: { $regex: new RegExp(_model), $options: "i" } });
+    }
+
+    // Find color with regex
+    let _color = req.query.color;
+    if (_color) {
+        condition.push({ color: { $regex: new RegExp(_color), $options: "i" } });
+    }
+
+    // Find speed greater than or equal given speed
+    let _speed = req.query.speed;
+    if (_speed) {
+        condition.push({
+            speed: { $gte: _speed }
+        });
+    }
+
+    if (condition.length > 0) {
+        Car.find().and(condition).then((cars) => {
+            return res.status(200).json(
+                cars
+            );
+        }).catch(next);
+    } else {
+        Car.find({}).then((cars) => {
+            return res.status(200).json(
+                cars
+            );
+        }).catch(next);
+    }
 });
 
 // Create a car

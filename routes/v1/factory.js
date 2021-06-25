@@ -26,13 +26,60 @@ router.get("/:id", (req, res, next) => {
         }).catch(next);
 });
 
-// Get all factories
+// // Get all factories
+// router.get("/", (req, res, next) => {
+//     Factory.find({}).then((factories) => {
+//         return res.status(200).json(
+//             factories
+//         );
+//     }).catch(next);
+// });
+
+// Get factories with conditions
 router.get("/", (req, res, next) => {
-    Factory.find({}).then((factories) => {
-        return res.status(200).json(
-            factories
-        );
-    }).catch(next);
+    let condition = [];
+
+    // Find name with regex
+    let _name = req.query.name;
+    if (_name) {
+        condition.push({ name: { $regex: new RegExp(_name), $options: "i" } });
+    }
+
+    // Find country with regex
+    let _country = req.query.country;
+    if (_country) {
+        condition.push({ country: { $regex: new RegExp(_country), $options: "i" } });
+    }
+
+    // Find exact license
+    let _license = req.query.license;
+    if (_license) {
+        condition.push({
+            license: _license
+        });
+    }
+
+    // Find year greater than or equal given year
+    let _year = req.query.year;
+    if (_year) {
+        condition.push({
+            year: { $gte: _year }
+        });
+    }
+
+    if (condition.length > 0) {
+        Factory.find().and(condition).then((factories) => {
+            return res.status(200).json(
+                factories
+            );
+        }).catch(next);
+    } else {
+        Factory.find({}).then((factories) => {
+            return res.status(200).json(
+                factories
+            );
+        }).catch(next);
+    }
 });
 
 // Get all foods of factory
@@ -54,8 +101,7 @@ router.get("/:id/foods", (req, res, next) => {
 
 // Create a factory
 router.post("/", (req, res, next) => {
-    if (!req.body.species
-        || !req.body.name
+    if (!req.body.name
         || !req.body.location
         || !req.body.country
         || !req.body.license

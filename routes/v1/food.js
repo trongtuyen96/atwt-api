@@ -25,19 +25,63 @@ router.get("/:id", (req, res, next) => {
         }).catch(next);
 });
 
-// Get all foods
+// // Get all foods
+// router.get("/", (req, res, next) => {
+//     Food.find({}).then((foods) => {
+//         return res.status(200).json(
+//             foods
+//         );
+//     }).catch(next);
+// });
+
+// Get foods with conditions
 router.get("/", (req, res, next) => {
-    Food.find({}).then((foods) => {
-        return res.status(200).json(
-            foods
-        );
-    }).catch(next);
+    let condition = [];
+
+    // Find name with regex
+    let _name = req.query.name;
+    if (_name) {
+        condition.push({ name: { $regex: new RegExp(_name), $options: "i" } });
+    }
+
+    // Find color with regex
+    let _color = req.query.color;
+    if (_color) {
+        condition.push({ color: { $regex: new RegExp(_color), $options: "i" } });
+    }
+
+    // Find origin with regex
+    let _origin = req.query.origin;
+    if (_origin) {
+        condition.push({ origin: { $regex: new RegExp(_origin), $options: "i" } });
+    }
+
+    // Find weight greater than or equal given weight
+    let _weight = req.query.weight;
+    if (_weight) {
+        condition.push({
+            weight: { $gte: _weight }
+        });
+    }
+
+    if (condition.length > 0) {
+        Food.find().and(condition).then((foods) => {
+            return res.status(200).json(
+                foods
+            );
+        }).catch(next);
+    } else {
+        Food.find({}).then((foods) => {
+            return res.status(200).json(
+                foods
+            );
+        }).catch(next);
+    }
 });
 
 // Create food
 router.post("/", (req, res, next) => {
-    if (!req.body.species
-        || !req.body.name
+    if (!req.body.name
         || !req.body.weight
         || !req.body.color
         || !req.body.origin

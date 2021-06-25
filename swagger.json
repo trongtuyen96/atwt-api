@@ -51,9 +51,9 @@
                 "tags": [
                     "user"
                 ],
-                "summary": "Get user with condition",
+                "summary": "Get users with conditions",
                 "description": "",
-                "operationId": "getUser",
+                "operationId": "getUsers",
                 "produces": [
                     "application/json"
                 ],
@@ -275,11 +275,37 @@
                 "tags": [
                     "car"
                 ],
-                "summary": "Get all cars",
+                "summary": "Get cars with conditions",
                 "description": "",
-                "operationId": "getAllCar",
+                "operationId": "getCars",
                 "produces": [
                     "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "type",
+                        "description": "Type of car",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "model",
+                        "description": "Model of car",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "color",
+                        "description": "Color of car",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "speed",
+                        "description": "Speed of car (greater than or equal)",
+                        "type": "integer"
+                    }
                 ],
                 "responses": {
                     "200": {
@@ -440,11 +466,37 @@
                 "tags": [
                     "factory"
                 ],
-                "summary": "Get all factories",
+                "summary": "Get factories with conditions",
                 "description": "",
-                "operationId": "getAllFactory",
+                "operationId": "getFactories",
                 "produces": [
                     "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "name",
+                        "description": "Name of factory",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "country",
+                        "description": "Country of factory",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "license",
+                        "description": "License of factory",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "year",
+                        "description": "Year of establishment of factory (greater than or equal)",
+                        "type": "integer"
+                    }
                 ],
                 "responses": {
                     "200": {
@@ -643,11 +695,37 @@
                 "tags": [
                     "food"
                 ],
-                "summary": "Get all foods",
+                "summary": "Get foods with conditions",
                 "description": "",
-                "operationId": "getAllFood",
+                "operationId": "getFoods",
                 "produces": [
                     "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "name",
+                        "description": "Name of food",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "color",
+                        "description": "Color of food",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "origin",
+                        "description": "Origin of food",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "weight",
+                        "description": "Weight of food (greater than or equal)",
+                        "type": "integer"
+                    }
                 ],
                 "responses": {
                     "200": {
@@ -808,11 +886,37 @@
                 "tags": [
                     "zoo"
                 ],
-                "summary": "Get all zoo",
+                "summary": "Get zoos with conditions",
                 "description": "",
-                "operationId": "getAllZoo",
+                "operationId": "getZoos",
                 "produces": [
                     "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "name",
+                        "description": "Name of zoo",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "country",
+                        "description": "Country of zoo",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "license",
+                        "description": "License of zoo",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "year",
+                        "description": "Year of establishment of zoo (greater than or equal)",
+                        "type": "integer"
+                    }
                 ],
                 "responses": {
                     "200": {
@@ -1011,11 +1115,43 @@
                 "tags": [
                     "animal"
                 ],
-                "summary": "Get all animals",
+                "summary": "Get animals with conditions",
                 "description": "",
-                "operationId": "getAllAnimal",
+                "operationId": "getAnimals",
                 "produces": [
                     "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "name",
+                        "description": "Name of animal",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "species",
+                        "description": "Species of animal",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "color",
+                        "description": "Color of animal",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "weight",
+                        "description": "Weight of animal (greater than or equal)",
+                        "type": "integer"
+                    },
+                    {
+                        "in": "query",
+                        "name": "lifespan",
+                        "description": "Lifespan of animal (greater than or equal)",
+                        "type": "integer"
+                    }
                 ],
                 "responses": {
                     "200": {
