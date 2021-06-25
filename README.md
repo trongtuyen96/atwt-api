@@ -29,7 +29,7 @@
 There are 6 endpoint groups available now:
 1. User
 
-   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /user : Get users with condition
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /user : Get users with conditions
    
    <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/post_badge.PNG" width="60">  /user : Create a user
    
@@ -43,7 +43,7 @@ There are 6 endpoint groups available now:
    
 2. Car
    
-   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /car : Get all cars
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /car : Get cars with conditions
    
    <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/post_badge.PNG" width="60"> /car : Create a car
    
@@ -55,7 +55,7 @@ There are 6 endpoint groups available now:
    
 3. Factory
    
-   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /factory : Get all factories
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /factory : Get factories with conditions
    
    <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/post_badge.PNG" width="60"> /factory : Create a factory
    
@@ -69,7 +69,7 @@ There are 6 endpoint groups available now:
    
 4. Food
    
-   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /food : Get all foods
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /food : Get foods with conditions
    
    <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/post_badge.PNG" width="60"> /food : Create food
    
@@ -81,7 +81,7 @@ There are 6 endpoint groups available now:
 
 5. Zoo
    
-   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /zoo : Get all zoos
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /zoo : Get zoos with conditions
    
    <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/post_badge.PNG" width="60"> /zoo : Create a zoo
    
@@ -95,7 +95,7 @@ There are 6 endpoint groups available now:
    
 6. Animal
    
-   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /animal : Get all animals
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /animal : Get animals with conditions
    
    <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/post_badge.PNG" width="60"> /animal : Create an animal
    
