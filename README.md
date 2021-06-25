@@ -14,20 +14,25 @@
   <br>API docs: https://atwt-api.herokuapp.com/api-docs/</h4>
 
 ## Table of Contents
+- [Changelogs](#changelogs)
 - [Endpoints](#endpoints)
 - [How To Use](#how-to-use)
 - [Author](#author)
 - [License](#license)
 
+## Changelogs
+- Update 25/06/2021: Add GET methods with multiple conditions
+- Update 24/06/2021: Add PUT methods for objects
+
 ## Endpoints
 There are 6 endpoint groups available now:
 1. User
 
-   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /user : Get all users
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /user : Get users with condition
    
    <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/post_badge.PNG" width="60">  /user : Create a user
    
-   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/put_badge.PNG" width="60">  /user : Update existing user - Disabled
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/put_badge.PNG" width="60">  /user : Update existing user
    
    <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /user/{userId} : Get specific user
    
@@ -41,7 +46,7 @@ There are 6 endpoint groups available now:
    
    <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/post_badge.PNG" width="60"> /car : Create a car
    
-   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/put_badge.PNG" width="60"> /car : Update existing car - Disabled
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/put_badge.PNG" width="60"> /car : Update existing car
    
    <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /car/{carId} : Get specific car
    
@@ -53,7 +58,7 @@ There are 6 endpoint groups available now:
    
    <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/post_badge.PNG" width="60"> /factory : Create a factory
    
-   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/put_badge.PNG" width="60"> /factory : Update existing factory - Disabled
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/put_badge.PNG" width="60"> /factory : Update existing factory
    
    <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /factory/{factoryId} : Get specific factory
    
@@ -67,7 +72,7 @@ There are 6 endpoint groups available now:
    
    <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/post_badge.PNG" width="60"> /food : Create food
    
-   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/put_badge.PNG" width="60"> /food : Update food - Disabled
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/put_badge.PNG" width="60"> /food : Update food
    
    <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /food/{foodId} : Get specific food
    
@@ -79,7 +84,7 @@ There are 6 endpoint groups available now:
    
    <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/post_badge.PNG" width="60"> /zoo : Create a zoo
    
-   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/put_badge.PNG" width="60"> /zoo : Update a zoo - Disabled
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/put_badge.PNG" width="60"> /zoo : Update a zoo
    
    <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /zoo/{zooId} : Get specific zoo
    
@@ -93,7 +98,7 @@ There are 6 endpoint groups available now:
    
    <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/post_badge.PNG" width="60"> /animal : Create an animal
    
-   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/put_badge.PNG" width="60"> /animal : Update an animal - Disabled
+   <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/put_badge.PNG" width="60"> /animal : Update an animal
    
    <img src="https://github.com/trongtuyen96/atwt-api/blob/master/covers/get_badge.PNG" width="60">  /animal/{animalId} : Get specific animal
    
