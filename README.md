@@ -21,6 +21,7 @@
 - [License](#license)
 
 ## Changelogs
+- Update 26/06/2021: Add GET methods with multiple conditions for all endpoints (Swagger docs updated)
 - Update 25/06/2021: Add GET methods with multiple conditions
 - Update 24/06/2021: Add PUT methods for objects
 
