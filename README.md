@@ -17,7 +17,7 @@
 - [Changelogs](#changelogs)
 - [Endpoints](#endpoints)
 - [How To Use](#how-to-use)
-- [Docker usage](#docker-usage)
+- [Docker Usage](#docker-usage)
 - [Author](#author)
 - [License](#license)
 
